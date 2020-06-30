@@ -14,14 +14,16 @@
  
 ### Important terms:
  * Entropy: It is the measure of impurity(or purity). It defines randomness in data. It is the first step to solve the problem of decision tree. In order to select best attribute of the node, which can be used for splitting further, we use entropy.
- Entropy values ranges between 0 to 1. We calculate entropy for available attributes and finally choose one lowest entropy. 
+ Entropy values ranges between 0 to 1(1 means completely impure subset, like when we have equal number of yes and no). We calculate entropy for available attributes and finally choose one lowest entropy. When we get 0 as entropy we call it as a pure sub split and then it is treated as leaf node.
  It is given by:
  ![Entropy](images/entropy.jpg)
 
-* Information Gain: Decrease in entropy after a dataset is split on the basis of an attribute. Constructing decision trees involves finding attribute that returns highest information gain.
+* Information Gain: It measures the reduction in entropy, it decides whichc attribute should be selected as decision node. Constructing decision trees involves finding attribute that returns highest information gain. It is given by
+ ![Information Gain](images/info_gain.png)
 
+ We calculate entropy for each cases and then calculate information gain also, and then compare the information gain.
  * Gini Index: It is measure of impurity(or purity) used in build decision tree in CART.
  
  * Reduction in variance: It is an algo which is used for continuous target variable(regression problems). The split with lower variance is selected as the criteria to split the sample.
  * Chi Sqaure: It is an algo to find out the statistical significance between the differences between sub nodes and parent node.
- * Entropy: 
+
