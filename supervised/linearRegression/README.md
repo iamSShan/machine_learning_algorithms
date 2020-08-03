@@ -6,7 +6,7 @@
 
 * Linear regression is a linear model, e.g. a model that assumes a linear relationship between the input variables (x) and the single output variable (y). More specifically, that y can be calculated from a linear combination of the input variables (x).
 
-* Linear combination of input means -> Suppose we have inputs: x, y and z then it is: ax + by + cz
+* Linear combination of input means -> Suppose we have inputs: x1, x2 and x3 then it is: ax1 + bx2 + cx3
 
 * Linear combination of vectors means ->  A linear combination of vectors is a sum of scalar multiples of those vectors. That is, given a set of M vectors xi of the same type, such as R^N (they must have the same number of elements so they can be added), a linear combination is formed by multiplying each vector by a scalar `αi` (alpha) and summing to produce a new vector y of the same type:   y = α1.x1 + α2.x2 +α3.x3 + ....αm.xm 
 
@@ -18,6 +18,16 @@
 
 	Read more here: https://ml-cheatsheet.readthedocs.io/en/latest/linear_regression.html
 				  : https://towardsdatascience.com/coding-deep-learning-for-beginners-linear-regression-part-1-initialization-and-prediction-7a84070b01c8
+
+- There can be multiple lines that can minimize absolute error, but there will be only one line that will minimize sum of squared errors(SSE). Therefore using SSE also makes implementation easier.
+- Best regression is the one that minimizes sum of squared errors. Σ(actual-predicted)^2
+- Several algo for for minimizing sum of squared errors:
+	* ordinary least squares
+	* gradient descent
+- Event though, there is shortcoming with SSE, as data points increases, SSE increase. Which means if a line fitting less data points in a less efficient than a line fitting more data point dataset. Former will have less SSE compared to latter.
+- Evaluation metric which does not has this shortcoming is R squared
+- R^2 answers the question: how much of change in the output(y) is explained by the change in the input(X)
+- This number should be bigger.
 
 - Different techniques can be used to prepare or train the linear regression equation from data, the most common of which is called Ordinary Least Squares. It is common to therefore refer to a model prepared this way as Ordinary Least Squares Linear Regression or just Least Squares Regression.
 - The linear equation assigns one scale factor to each input value or column, called a coefficient and represented by the capital Greek letter Beta (B). One additional coefficient is also added, giving the line an additional degree of freedom (e.g. moving up and down on a two-dimensional plot) and is often called the intercept or the bias coefficient.(y = B0 + B1*x)
@@ -41,19 +51,24 @@
     	** Lasso Regression: where Ordinary Least Squares is modified to also minimize the absolute sum of the coefficients (called L1 regularization).
     	** Ridge Regression: where Ordinary Least Squares is modified to also minimize the squared absolute sum of the coefficients (called L2 regularization).
 
-Cost function of linear regression:
-- it is a function that measures the performance of ML model for a given data. Cost Function quantifies the error between predicted values and expected values and presents it in the form of a single real number.
+### Cost function of linear regression:
+- It is a function that measures the performance of ML model for a given data. Cost Function quantifies the error between predicted values and expected values and presents it in the form of a single real number.
 The purpose of Cost Function is to be either:
 
     * Minimized - then returned value is usually called cost, loss or error. The goal is to find the values of model parameters for which Cost Function return as small number as possible.
     * Maximized - then the value it yields is named a reward. The goal is to find values of model parameters for which returned number is as large as possible.
 Read Tailoring Cost functions: https://towardsdatascience.com/coding-deep-learning-for-beginners-linear-regression-part-2-cost-function-49545303d29f
 
-Gradient Descent of Linear Regression:
-- Gradient descent is an algorithm that is used to minimize a function. Gradient descent is used not only in linear regression; it is a more general algorithm.
+### Gradient Descent of Linear Regression:
+- Gradient descent is an algorithm that is used to minimize a cost function. Gradient descent is used not only in linear regression; it is a more general algorithm.
 - While training the model, the model calculates the cost function which measures the Root Mean Squared error between the predicted value (pred) and true value (y). The model targets to minimize the cost function.
 -  To minimize the cost function, the model needs to have the best value of θ1 and θ2. Initially model selects θ1 and θ2 values randomly and then itertively update these value in order to minimize the cost function untill it reaches the minimum. By the time model achieves the minimum cost function, it will have the best θ1 and θ2 values. Using these finally updated values of θ1 and θ2 in the hypothesis equation of linear equation, model predicts the value of x in the best manner it can.
 - We will start off by some initial guesses for the values of θ0 and θ1 and then keep on changing the values according to the formula:  θj:=θj − α*(∂/∂θj) * f(θ0,θ1) for j=0,1
 - α is called the learning rate, and it determines how big a step needs to be taken when updating the parameters. The learning rate is always a positive number.
-- We want to simultaneously update θ0 and θ1, that is, calculate the right-hand-side of the above equation for both j=0 as well as j=1 and then update the values of the parameters to the newly calculated ones. This process is repeated till convergence is achieved.
+- We want to simultaneously update θ0 and θ1, that is, calculate the right-hand-side of the above equation for both j=0 as well as j=1 and then update the values of the parameters to the newly calculated ones, which means first calculate for both and then assign(as shown in picture below). This process is repeated till convergence is achieved.
+![grad_desc_calc](images/grad_desc_calc.png)
+
+- If α is too small, then gradient descent can be slow; if it is too large gradient descent can overshoot the minimum. It may fail to converge, or even diverge.
+- Suppose θ1​ is at a local optimum of J(θ1​)(at a minimum position), what will one step of gradient descent θ1:=θ1 − α*(∂/∂θ1).J(θ1​) do? (It will be unchanged, as slope at that point will be 0, hence derivative term will be 0)
+- As we approach local minimum, gradient descent will automatically take smaller steps(as derivative term becomes smaller). So there is no need to decrease α over time.
 - Read this for further info: https://www.hackerearth.com/blog/developers/gradient-descent-algorithm-linear-regression
