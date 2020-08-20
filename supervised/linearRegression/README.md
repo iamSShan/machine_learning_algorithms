@@ -71,4 +71,5 @@ Read Tailoring Cost functions: https://towardsdatascience.com/coding-deep-learni
 - If α is too small, then gradient descent can be slow; if it is too large gradient descent can overshoot the minimum. It may fail to converge, or even diverge.
 - Suppose θ1​ is at a local optimum of J(θ1​)(at a minimum position), what will one step of gradient descent θ1:=θ1 − α*(∂/∂θ1).J(θ1​) do? (It will be unchanged, as slope at that point will be 0, hence derivative term will be 0)
 - As we approach local minimum, gradient descent will automatically take smaller steps(as derivative term becomes smaller). So there is no need to decrease α over time.
+- Gradient descent is guaranteed to find the global minimum for any function J(θ0,θ1)
 - Read this for further info: https://www.hackerearth.com/blog/developers/gradient-descent-algorithm-linear-regression
