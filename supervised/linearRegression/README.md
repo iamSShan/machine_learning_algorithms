@@ -24,7 +24,7 @@
 - Several algo for for minimizing sum of squared errors:
 	* ordinary least squares
 	* gradient descent
-- Event though, there is shortcoming with SSE, as data points increases, SSE increase. Which means if a line fitting less data points in a less efficient than a line fitting more data point dataset. Former will have less SSE compared to latter.
+- Event though, there is shortcoming with SSE, as data points increases, SSE increase. Which means if a line fitting less data points is less efficient than a line fitting more data point dataset. Former will have less SSE compared to latter.
 - Evaluation metric which does not has this shortcoming is R squared
 - R^2 answers the question: how much of change in the output(y) is explained by the change in the input(X)
 - This number should be bigger.
@@ -42,6 +42,7 @@
  - Ordinary Least Squares:
  	* When we have more than one input we can use Ordinary Least Squares to estimate the values of the coefficients.
  	* The Ordinary Least Squares procedure seeks to minimize the sum of the squared residuals. This means that given a regression line through the data we calculate the distance from each data point to the regression line, square it, and sum all of the squared errors together. This is the quantity that ordinary least squares seeks to minimize.
+ 	Read: https://towardsdatascience.com/understanding-the-ols-method-for-simple-linear-regression-e0a4e8f692cc
  - Gradient Descent:
  	* When there are one or more inputs you can use a process of optimizing the values of the coefficients by iteratively minimizing the error of the model on your training data.
  	* This operation is called Gradient Descent and works by starting with random values for each coefficient. The sum of the squared errors are calculated for each pair of input and output values. A learning rate is used as a scale factor and the coefficients are updated in the direction towards minimizing the error. The process is repeated until a minimum sum squared error is achieved or no further improvement is possible.

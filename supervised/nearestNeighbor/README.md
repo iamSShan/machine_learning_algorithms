@@ -2,10 +2,10 @@
 
 
 * The k-nearest neighbors (KNN) algorithm is a simple algorithm that stores all the available cases and classifies the new data or case based on similarity measure.
-* 'K' denotes number of nearest neighbors which are helps to predict class of new data or testing data.
+* 'K' denotes number of nearest neighbors which helps to predict class of new data or testing data.
 * The KNN algorithm assumes that similar things exist in close proximity. In other words, similar things are near to each other.
 * It is a simple, easy-to-implement supervised machine learning algorithm that can be used to solve both classification and regression problems.
-* Euclidean distance between two neighbors is calculated. Refer to this: https://www.mathsisfun.com/algebra/distance-2-points.html
+* Euclidean distance between two neighbors is calculated. Refer to [this](https://www.mathsisfun.com/algebra/distance-2-points.html).
 * KNN are used in recommendation systems, like in Amazon it shows similar items when you have added a item on a cart.
 * KNN algorithm is also a lazy learner because there is no learning phase of the model here, all of the work happens when prediction is requested.
 
