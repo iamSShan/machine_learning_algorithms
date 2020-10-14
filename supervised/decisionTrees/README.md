@@ -18,12 +18,11 @@
  It is given by:
  ![Entropy](images/entropy.jpg)
 
-* Information Gain: It measures the reduction in entropy, it decides whichc attribute should be selected as decision node. Constructing decision trees involves finding attribute that returns highest information gain. It is given by
+* Information Gain: It measures the reduction in entropy, it decides which attribute should be selected as decision node. Constructing decision trees involves finding attribute that returns highest information gain. It is given by
  ![Information Gain](images/info_gain.png)
 
  We calculate entropy for each cases and then calculate information gain also, and then compare the information gain.
  * Gini Index: It is measure of impurity(or purity) used in build decision tree in CART.
- 
+	![Gini Impurity](images/gini_impurity.png)
  * Reduction in variance: It is an algo which is used for continuous target variable(regression problems). The split with lower variance is selected as the criteria to split the sample.
  * Chi Sqaure: It is an algo to find out the statistical significance between the differences between sub nodes and parent node.
-
