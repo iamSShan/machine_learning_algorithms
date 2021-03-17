@@ -20,7 +20,7 @@ Entropy values ranges between 0 to 1(1 means completely impure subset, like when
 
 	* Here 3 yes and 3 no is worst split and is impurest, where 4 yes and 0 no is best split and is purest.
 	* For a single node, we can find which feature is to be selected among other features for splitting by considering featuring giving less entropy.
-	* When we get pure split entropy(i.e 0) we consider that as leaf node.
+	* When we get pure split entropy(i.e. 0) we consider that as leaf node.
 	* But this is just for a node, we have to check for whole sub-tree below too till leaf node and add their entropy values, to get best split possible. For this we use Information Gain.
 
 * **Information Gain**: It measures the reduction in entropy, it decides which attribute should be selected as decision node. Constructing decision trees involves finding attribute that returns highest information gain. It is given by
@@ -28,7 +28,9 @@ Entropy values ranges between 0 to 1(1 means completely impure subset, like when
  	* Information gain calculates total entropy value from that node to bottom.
  	* We calculate entropy for each cases and then calculate information gain also, and then compare the information gain.
  	* Formula for Information gain is:
+
  	![Gini Impurity](images/info_gain_formula.png)
+
  	* E(S) is entropy of the selected node(feature), S is the total subset, Si is subset after splitting, E(Si) is entropy of the subset after splitting
  	* E(S) uses the same formula of entropy. We use summation as we have to consider all the feature of the subset.
 
@@ -44,4 +46,4 @@ Entropy values ranges between 0 to 1(1 means completely impure subset, like when
 
 
 ### Split for Numerical feature
-[Watch this!](https://www.youtube.com/watch?v=5O8HvA9pMew)]
+[Watch this!](https://www.youtube.com/watch?v=5O8HvA9pMew)
