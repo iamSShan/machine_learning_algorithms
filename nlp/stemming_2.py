@@ -31,3 +31,5 @@ for i in range(len(sentences)):
 	sentences[i] = " ".join(words)
 
 print(sentences)
+
+# We can also use Snowball stemmer. Read: https://www.geeksforgeeks.org/snowball-stemmer-nlp/
