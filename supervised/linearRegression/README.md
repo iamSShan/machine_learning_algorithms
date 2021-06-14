@@ -25,7 +25,16 @@
 	* ordinary least squares
 	* gradient descent
 - Event though, there is shortcoming with SSE, as data points increases, SSE increase. Which means if a line fitting less data points is less efficient than a line fitting more data point dataset. Former will have less SSE compared to latter.
-- Evaluation metric which does not has this shortcoming is R squared
+- Evaluation metric which does not has this shortcoming is R squared.
+- R-squared is a statistical measure of how close the data are to the fitted regression line. It is also known as the coefficient of determination, or the coefficient of multiple determination for multiple regression.
+- The definition of R-squared is fairly straight-forward; it is the percentage of the response variable variation that is explained by a linear model. Or:
+- R-squared = Explained variation / Total variation
+- R-squared is always between 0 and 100%:
+(0% indicates that the model explains none of the variability of the response data around its mean.
+100% indicates that the model explains all the variability of the response data around its mean.
+In general, the higher the R-squared, the better the model fits your data.)
+
+
 - R^2 answers the question: how much of change in the output(y) is explained by the change in the input(X)
 - This number should be bigger.
 
