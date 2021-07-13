@@ -4,6 +4,10 @@
 ### Regression:
 * Regression: Regression in machine learning consists of mathematical methods that allow data scientists to predict a continuous outcome (y) based on the value of one or more predictor variables (x). [y is independent variable and X are dependent variables]
 * A regression problem is when the output variable is a real or continuous value, such as “salary” or “weight”.
+* Uses of regression:
+	* Determining relationship between independent variable and dependent variable
+	* forecasting an effect, for e.g how much additional sale income will one get for each 1000$ spent on marketing.
+	* Trend forecasting, for e.g price of bitcoin in last 6 months
 
 ### Intro to Linear Regression:
 
@@ -31,13 +35,13 @@
 * The coefficient value represents the mean change in the response given a one unit change in the predictor. For example, if a coefficient is +4, the mean response value increases by 4 for every one unit change in the predictor.
 * For e.g: If we have a eqn for multivariable regression: y = 0.8 +  1.2X1 + 3X2 + 5X3 + 1X4; so here we can say maximum value among all coefficients is 5, so it means feature X3 is very important for determining y.
 * Value of these coefficients are determined when model is trained and we come to know which features are most important.
-* Coefficient `m` in eqn y = mx = c; can also been called as slope of the equation
+* Coefficient `m` in eqn y = mx + b; can also be called as slope of the equation.
 
 ### Bias:
 * Bias is the difference between the expected value of an estimator and the true value being estimated.
 * The bias coefficient gives an extra degree of freedom to this model.
 (https://stats.stackexchange.com/questions/13643/what-intuitively-is-bias)
-* Bias can also been seen as y-intercept in the eqn y = mx + c(where c is the bias)
+* Bias can also been seen as y-intercept in the eqn y = mx + b (where b is the bias)
 
 ![slope and intercept](images/slope_and_intercept.png)
 
@@ -51,7 +55,7 @@
 
 
 ### Best fit line
-* One of our goal is to find best fit line. But at first we don't know which is the best fit line as there can be multiple lines created at first.
+* One of our goal is to find the best fit line. But initially we don't know which is the best fit line as there can be multiple lines created at first.
 * Now when we have a line we have to try to minimize the distance(between line and points) i.e. minimize the error such that if we do summation of all the errors it should be minimum.
 * So as there can be multiple lines that can minimize absolute error, but there will be only one line that will minimize sum of squared errors(SSE). Therefore using SSE also makes implementation easier.
 * So we try to find `m` and `c`, and once we find the best `m` and `c` values, we get the best fit line. So when we are finally using our model for prediction, it will predict the value of y for the input value of x.
@@ -63,10 +67,6 @@
 * Evaluation metric which does not has this shortcoming is R squared.
 
 
-## 	How to update `m` and `c` values to get the best fit line ?
-
-*Note: `m` and `c` can be repsented by many other letters too, a famous convention is θ2 and θ1 respectively*
-
 ### Cost function(J) of linear regression:
 *  It is a function that measures the performance of ML model for a given data. Cost Function quantifies the error between predicted values and expected values and presents it in the form of a single real number.
 * It is very important to update the θ1 and θ2 values, to reach the best value that minimize the error between predicted y value (pred) and true y value (y)
@@ -74,9 +74,11 @@ The purpose of Cost Function is to be either:
     * Minimized - then returned value is usually called cost, loss or error. The goal is to find the values of model parameters for which Cost Function return as small number as possible.
     * Maximized - then the value it yields is named a reward. The goal is to find values of model parameters for which returned number is as large as possible.
 * Formula:
+
 	![Cost function](images/cost_func.jpg)
 
-(where n is number of all the data points, predi(also called as ŷ) is given by mx+c)
+
+(where n is number of all the data points, predi(also called as ŷ) is given by mx+b)
 * Point which we find out or predict in best fit line(which lie on best fit line) are ŷ and y are the original points.
 * Now we try to minimize this cost function value and while minimizing whichever lines gives minimum error is selected as best fit line.
 * But actually we can have multiple best fit lines(from which best one is to be selected), and from that we have to compute the different-different cost functions(for every line) and find minimum value, but it will take much time and processing power. So selecting n number of lines(n can be millions or billions too) and try to find cost function is not an efficient way. So instead we use some methods like Gradient Descent, etc.
@@ -106,8 +108,8 @@ The purpose of Cost Function is to be either:
  - Regularization:
  	* There are extensions of the training of the linear model called regularization methods. These seek to both minimize the sum of the squared error of the model on the training data (using ordinary least squares) but also to reduce the complexity of the model (like the number or absolute size of the sum of all coefficients in the model).
  	* Two popular examples of regularization procedures for linear regression are:
-    	** Lasso Regression: where Ordinary Least Squares is modified to also minimize the absolute sum of the coefficients (called L1 regularization).
-    	** Ridge Regression: where Ordinary Least Squares is modified to also minimize the squared absolute sum of the coefficients (called L2 regularization).
+    	* Lasso Regression: where Ordinary Least Squares is modified to also minimize the absolute sum of the coefficients (called L1 regularization).
+    	* Ridge Regression: where Ordinary Least Squares is modified to also minimize the squared absolute sum of the coefficients (called L2 regularization).
 
 
 ### Gradient Descent of Linear Regression:
