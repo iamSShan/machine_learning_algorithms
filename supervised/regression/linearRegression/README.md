@@ -25,6 +25,14 @@
 
 	Multivariable regression: A more complex, multi-variable linear equation might look like this, where w represents the regression coefficients, or weights, our model will try to learn. f(x,y,z)=w1x+w2y+w3z
 
+
+### Basic Assumptions with Linear Regression model(Imp Question):
+* Linearity: The relationship between X and the mean of Y is linear.
+* Homoscedasticity(meaning “same variance”): The variance of residual(of the dependent variable) is the same for any value of X.
+* Independence: Observations are independent of each other.
+* Normality: For any fixed value of X, Y is normally distributed. (If not normally distributed then we can make using normally distributed using techniques like log transformation, box-cox transformation, exponential transformation, etc.)
+
+
 ### Regression Coefficient:
 * Regression coefficients are estimates of the unknown population parameters and describe the relationship between a input variable and the response.
 * In linear regression, coefficients are the values that multiply the input values. Suppose you have the following regression equation: y = 4X + 3. In this equation, +4 is the coefficient, X is the input feature, and +3 is the constant.
@@ -89,9 +97,9 @@ The purpose of Cost Function is to be either:
 
 ### Different Techniques for Linear Regression:
 - Different techniques can be used to prepare or train the linear regression equation from data, the most common of which is called Ordinary Least Squares. It is common to therefore refer to a model prepared this way as Ordinary Least Squares Linear Regression or just Least Squares Regression.
-- The linear equation assigns one scale factor to each input value or column, called a coefficient and represented by the capital Greek letter Beta (B). One additional coefficient is also added, giving the line an additional degree of freedom (e.g. moving up and down on a two-dimensional plot) and is often called the intercept or the bias coefficient.(y = B0 + B1*x)
+- The linear equation assigns one scale factor to each input value or column, called a coefficient and represented by the capital Greek letter Beta (β). One additional coefficient is also added, giving the line an additional degree of freedom (e.g. moving up and down on a two-dimensional plot) and is often called the intercept or the bias coefficient.(y = β0 + β1*x)
 - It is common to talk about the complexity of a regression model like linear regression. This refers to the number of coefficients used in the model.
-- When a coefficient becomes zero, it effectively removes the influence of the input variable on the model and therefore from the prediction made from the model (0 * x = 0). This becomes relevant if you look at regularization methods that change the learning algorithm to reduce the complexity of regression models by putting pressure on the absolute size of the coefficients, driving some to zero.
+- When a coefficient becomes zero, it effectively removes the influence of the input variable on the model and therefore from the prediction made from the model (0 * x = 0). This becomes relevant if we look at regularization methods that change the learning algorithm to reduce the complexity of regression models by putting pressure on the absolute size of the coefficients, driving some to zero.
 - Let's talk about four techniques to prepare a linear regression model. But actually, there are many more techniques because the model is so well studied. Take note of Ordinary Least Squares because it is the most common method used in general. Also take note of Gradient Descent as it is the most common technique taught in machine learning classes.
  - Simple linear regression:
  	* With simple linear regression when we have a single input, we can use statistics to estimate the coefficients.
@@ -115,7 +123,7 @@ The purpose of Cost Function is to be either:
 ### Gradient Descent of Linear Regression:
 - Gradient descent is an algorithm that is used to minimize a cost function. Gradient descent is used not only in linear regression; it is a more general algorithm.
 - While training the model, the model calculates the cost function which measures the Root Mean Squared error between the predicted value (pred) and true value (y). The model targets to minimize the cost function.
--  To minimize the cost function, the model needs to have the best value of θ1 and θ2. Initially model selects θ1 and θ2 values randomly and then itertively update these value in order to minimize the cost function untill it reaches the minimum. By the time model achieves the minimum cost function, it will have the best θ1 and θ2 values. Using these finally updated values of θ1 and θ2 in the hypothesis equation of linear equation, model predicts the value of x in the best manner it can.
+-  To minimize the cost function, the model needs to have the best value of θ1 and θ2. Initially model selects θ1 and θ2 values randomly and then itertively update these value in order to minimize the cost function until it reaches the minimum. By the time model achieves the minimum cost function, it will have the best θ1 and θ2 values. Using these finally updated values of θ1 and θ2 in the hypothesis equation of linear equation, model predicts the value of x in the best manner it can.
 - We will start off by some initial guesses for the values of θ0 and θ1 and then keep on changing the values according to the formula(convergence theorem):  θj:=θj − α*(∂/∂θj) * f(θ0,θ1) for j=0,1
 - α is called the learning rate, and it determines how big a step needs to be taken when updating the parameters. The learning rate is always a positive number.
 - We want to simultaneously update θ0 and θ1, that is, calculate the right-hand-side of the above equation for both j=0 as well as j=1 and then update the values of the parameters to the newly calculated ones, which means first calculate for both and then assign(as shown in picture below). This process is repeated till convergence is achieved.
@@ -127,3 +135,25 @@ The purpose of Cost Function is to be either:
 - As we approach local minimum, gradient descent will automatically take smaller steps(as derivative term becomes smaller). So there is no need to decrease α over time.
 - Gradient descent is guaranteed to find the global minimum for any function J(θ0,θ1)
 - Read this for further info: https://www.hackerearth.com/blog/developers/gradient-descent-algorithm-linear-regression
+
+### Advantages of Linear Regression:
+* It performs exceptionally well for linearly separable data.
+* Easy to implement and train the model.
+* It can handle overfitting using dimensionlity reduction techniques and cross validation and regularization.
+
+### Disadvantages of Linear Regression:
+* Sometimes Lot of Feature Engineering Is required
+* If the independent features are correlated it may affect performance
+* It is often quite prone to noise(outliers) and overfitting.
+
+
+### Important Notes:
+* Whenever we deal with gradient descent or loss function optimizer, then feature scaling is required. Here also it is required. If we don't do feature scaling gradient descent will be bigger and to come to optimal minimum position it will take time.
+* It is sensitive to missing values so we have to handle missing values while feature engineering step.
+* As we know linear regression needs the relationship between the independent and dependent variables to be linear. It is also important to check for outliers since linear regression is sensitive to outlier effects.
+
+* In below image we can see in first image there are no outiers but in second diagram we have an outlier then we can see that best fit line is getting changed to reduce to mean squared error(performance metrics). But this will impact overall performance of the model. Hence outlier impacts linear regression.
+
+![Impact of outliers](images/impactOfOutliers.png)
+
+* Linear regression can be used in problems like house price predictions and also it can be used in some business to evaluate trends and make estimates or forecasts. For example, if a company's sales have increased steadily every month for the past few years, by conducting a linear analysis on the sales data with monthly sales, the company could forecast sales in future months.
