@@ -1,0 +1,127 @@
+Encoding is done on categorical features.
+Categorical variables examples can be gender, email spam or not.
+If we try to provide these values to ML algorithms, it will not be able to understand, as many maths concepts are used. Hence we try to convert it into integer or floating point values. And then provide these converted values.
+
+Types of encoding:
+- Nominal encoding: Nominal categorical variables are where we don't have to concern about arrangement of categories. E.g: Gender, Country name, etc. It deals with nominal categorical variables.
+  Some types of nominal encoding are:
+  	-- One Hot Encoding
+  	-- One Hot Encoding with many categorical variables
+  	-- Mean Encoding
+- Ordinal encoding: In ordinal categorical variables we are concerned with rank. E.g: If we have to predict salary of person, and we have a column Designation, now this higher the designation, higher the rank and salary. Using this we can predict salary.
+  Some types of Ordinal encoding are:
+  	-- Label Encoding
+  	-- Target guided ordinal encoding
+
+
+1) One Hot Encoding:
+   ----------------
+
+| State |
+|-------| 
+| UP    |
+| MP    |
+| Goa   |
+| Delhi |
+
+If we apply one hot encoding to above data, we will get 4 columns(i.e name of states)
+		    UP		MP		Goa		Delhi
+UP		  1		   0		0		  0
+MP		  0		   1		0		  0
+Goa     0		   0		1		  0
+Delhi	  0		   0		0		  1
+
+For that state row only that state column value will be 1, every other appended column will be 0
+
+These added columns are called as dummy variables. We can do this using both pandas and sklearn
+
+Dummy variable trap: 
+* The Dummy Variable trap is a scenario in which the independent variables are multicollinear - a scenario in which two or more variables are highly correlated; in simple terms one variable can be predicted from the others.
+* Like in above exmaple, we can deduce column value(let's consider last col here) of Delhi. As we know when any of other column value is 1 then, it's value will be always 0. If all other column(till second last column) have 0, then it will contain 1 and will be of type Delhi. So we can delete this one column here. So if n categories are there, new columns created will be n-1.
+
+Disadvantage of One Hot Encoding:
+- If there is a column like Name, so there can be many names, if these Names are converted to dummy variables then many columns will be created, which will also increase number of dimension and that leads to curse of dimensionality. So if a column has many categorical values, then one hot encoding is not a good option.
+
+
+2) One Hot Encoding with many categorical variables
+- This was used in some competition like: KDD Orange
+- Here they calculated n(like 10) most repeating categories and they applied One Hot encoding to these n columns
+
+
+3) Label Encoding:
+   --------------
+
+Suppose there is dataset with a column degree:
+
+Degree
+------
+PhD
+B.Tech
+BE
+B.Com
+
+We can give ranks to this column, based on some criteria like education level or salary or anything.
+Degree  Rank
+------  ----
+PhD     4
+BE      2 
+B.Tech  3
+B.Com   1
+
+(Here more rank means more level)
+So basically adds these labels.
+
+4) Target guided ordinal encoding:
+   ------------------------------
+   Here with the categorical feature we also consider output feature
+   f1  o/p
+   A   1
+   B   0
+   C   1
+   D   1
+   E   0
+   A   0
+   B   0
+
+ For each and every category, we will calculate mean of the output variable
+ Like, for A there are two rows
+ f1 | o/p
+ --------
+ A  |  1
+ A  |  0
+
+ Wrt mean, we find out number of values for which A = 1 / total A occurence 
+ For e.g: if we get:
+ f1  mean
+ A  0.4
+ B  0.61
+ C  0.35
+ D  0.34
+
+ Now we assign labels(ranks) here wrt mean, more mean more rank.
+ f1  mean rank
+ A  0.4   3
+ B  0.61  4
+ C  0.35  2
+ D  0.34  1
+ A        3  
+ B        4
+
+This above works for ordinal categorical features.
+
+5) Mean encoding:
+   -------------
+   This works for nominal categorical features.
+   f1  o/p
+   A   1
+   B   0
+   C   1
+   D   1
+   E   0
+   A   0
+   B   0
+
+   Here we don't convert into categories, we just convert it into mean values.
+   Now `f1` will be replaced with mean value.
+   This is useful in case like when feature is zipcode, it can have many zipcode, so here we will calculate mean for every zipcode
+   After calculating mean of each zipcode, we replace zipcode with corresponding mean value.

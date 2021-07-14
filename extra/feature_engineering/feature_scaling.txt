@@ -1,0 +1,35 @@
+Feature scaling:
+- Feature Scaling is a technique to standardize the independent features present in the data in a fixed range. It is performed during the data pre-processing to handle highly varying magnitudes or values or units. If feature scaling is not done, then a machine learning algorithm tends to weigh greater values, higher and consider smaller values as the lower values, regardless of the unit of the values. 
+
+Every feature has two important components:
+	- magnitude(value of the feature)
+	- unit(method of measuring like kg, gm, cm, etc.)
+
+Why to perform feature scaling:
+- Suppose there is a feature called weights(kgs), here if we don't perform feature scaling and we are using K-nearest neighbor, then the distance b/w each point will be big. Therefore we scale down the feature values. If not scaled, the feature with a higher value range starts dominating when calculating distances.
+- For e.g. A weight of 10 grams and a price of 10 dollars represents completely two different things — which is a no brainer for humans, but for a model as a feature, it treats both as same.
+- Feature scaling refers to putting the values in the same range or same scale so that no variable is dominated by the other. The results would vary greatly between different units, 5kg and 5000gms. The features with high magnitudes will weigh in a lot more in the distance calculations than features with low magnitudes. To suppress this effect, we need to bring all features to the same level of magnitudes. This can be achieved by scaling.
+- If we are plotting a 2D graph, using these height and weights, then we will get varying distances which may be huge, when actually they are not very different.
+
+When to perform feature scaling:
+- Many algo works on concept of euclidean distance, manhattan distance, etc. Like K-nearest neighbor, K-means clustering, principal component ananlysis, gradient descent(like in Linear Regression, calculation speed increases after feature scaling), etc.
+- In these type of algo magnitude plays an important role, as we can see much variety in each distances.
+- Therefore in these cases where different features are in different units and these algorithms are used, we have to scale down the features value.
+
+How to scale:
+1) Standardisation: It replaces the values by their Z-scores
+	x' = (x-x̄)/σ  ; σ is standard deviation, x̄ is mean
+	When we apply this formula, automatically distribution will be converted in such a way that mean will be 0 and standard deviation will be 1
+	Sklearn StandardScaler library is used for this.
+
+2) Mean normalization: The distibution will scale down the values b/w -1 and 1 with μ = 0(i.e. mean = 0)
+					 : Standardisation and Mean normalization can be used for algorithms that assumes zero centric data like PCA(principal component analysis)
+					 : x' = ( x-mean(x) ) / ( max(x)-min(x) )
+
+3) Min-max scaling: This scaling brings value b/w 0 and 1.
+				  : x' = ( x-min(x) ) / ( max(x)-min(x) )
+
+4) Unit Vector: This will also scale down b/w [0, 1]
+x' = x /||x||
+
+Note: Naive Bayes, Linear Discriminant Analysis and tree based models are not affected by feature scaling. In short any algo which is not distance based is not affected by feature scaling. We can do here also, but mostly it doesn't affects.
