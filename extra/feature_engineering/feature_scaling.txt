@@ -1,20 +1,33 @@
 Feature scaling:
-- Feature Scaling is a technique to standardize the independent features present in the data in a fixed range. It is performed during the data pre-processing to handle highly varying magnitudes or values or units. If feature scaling is not done, then a machine learning algorithm tends to weigh greater values, higher and consider smaller values as the lower values, regardless of the unit of the values. 
+- Feature Scaling is a technique to standardize the independent `numerical` features present in the data in a fixed range. It is performed during the data pre-processing to handle highly varying magnitudes(or values) or units. If feature scaling is not done, then a machine learning algorithm tends to weigh greater values, higher and consider smaller values as the lower values, regardless of the unit of the values. 
+- This is the last step in data preprocessing and before model training.
+- It is also called as data normalization.
+- We fit feature scaling with train data and transform on testing data.
 
 Every feature has two important components:
 	- magnitude(value of the feature)
 	- unit(method of measuring like kg, gm, cm, etc.)
 
 Why to perform feature scaling:
-- Suppose there is a feature called weights(kgs), here if we don't perform feature scaling and we are using K-nearest neighbor, then the distance b/w each point will be big. Therefore we scale down the feature values. If not scaled, the feature with a higher value range starts dominating when calculating distances.
-- For e.g. A weight of 10 grams and a price of 10 dollars represents completely two different things — which is a no brainer for humans, but for a model as a feature, it treats both as same.
+- ML algorithm can't understand features units, can only understand magnitudes.
+
+- Suppose there are two features called weights(kgs) and heights(in cms) and if we want to plot them, here if we don't perform feature scaling and we are using K-nearest neighbor, then the distance b/w each point will be big. Therefore we scale down the feature values. If not scaled, the feature with a higher value range starts dominating when calculating distances.
+
+- Another example: A weight of 10 grams and a price of 10 dollars represents completely two different things — which is a no brainer for humans, but for a model as a feature, it treats both as same.
+
 - Feature scaling refers to putting the values in the same range or same scale so that no variable is dominated by the other. The results would vary greatly between different units, 5kg and 5000gms. The features with high magnitudes will weigh in a lot more in the distance calculations than features with low magnitudes. To suppress this effect, we need to bring all features to the same level of magnitudes. This can be achieved by scaling.
+
 - If we are plotting a 2D graph, using these height and weights, then we will get varying distances which may be huge, when actually they are not very different.
 
+- One more example can be: Let's say we have a DF containing heights of two person, column 1 contains height of first person in cms and column 2 contains height of second person in ft. So a row containg person1 height as 150 cm and person 2 height as 7 ft. We know that 7 ft is > than 150 cm, but here ML algorithm will consider 150 > 7. That's why we need to scale these features first.
+
+
 When to perform feature scaling:
-- Many algo works on concept of euclidean distance, manhattan distance, etc. Like K-nearest neighbor, K-means clustering, principal component ananlysis, gradient descent(like in Linear Regression, calculation speed increases after feature scaling), etc.
+- Many algo works on concept of euclidean distance, manhattan distance, etc. Like K-nearest neighbor, K-means clustering, principal component ananlysis, gradient descent, etc.
+- In Linear Regression, we can also use feature scaling as feature scaling works uses gradient descent in which we have to reach global minima, so if features are scaled to less value then global minima can be reached fast.
 - In these type of algo magnitude plays an important role, as we can see much variety in each distances.
 - Therefore in these cases where different features are in different units and these algorithms are used, we have to scale down the features value.
+
 
 How to scale:
 1) Standardisation: It replaces the values by their Z-scores
@@ -32,4 +45,5 @@ How to scale:
 4) Unit Vector: This will also scale down b/w [0, 1]
 x' = x /||x||
 
-Note: Naive Bayes, Linear Discriminant Analysis and tree based models are not affected by feature scaling. In short any algo which is not distance based is not affected by feature scaling. We can do here also, but mostly it doesn't affects.
+Note: Naive Bayes, Linear Discriminant Analysis, tree based models, XGBoost are not affected by feature scaling. In short any algo which is not distance based is not affected by feature scaling. We can do here also, but mostly it doesn't affects.
+Like in Decision Tree even if we apply feature scaling, number of branches will be almost same so it won't affect.
