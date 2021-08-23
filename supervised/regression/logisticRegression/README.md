@@ -8,7 +8,6 @@ It is a classification algorithm that is used to predict the probability of cate
 * For example watch [this](https://www.youtube.com/watch?v=L_xBe7MbPwk&t=3m47s)
 
 
-
 ### Introduction
 * Logistic regression is usually applied to problems where two set of data points can be linearly separable(can be divided with help of a straight line).
 ![Linearly Separable](images/linearlySep.jpg)
