@@ -1,5 +1,7 @@
 ## Gradient Boosting:
 
+* Gradient boosting is typically used with decision trees (especially CART trees) of a fixed size as base learners. For this special case, Friedman proposes a modification to gradient boosting method which improves the quality of fit of each base learner.
+
 * Let's take an example, let's say we have two independent features f1, f2 and a dependent feature 'salary' in a variable y
 * Now our first step here will be to compute base model which will give one output. Now output will give average of all salary column rows. Let' say average comes any value 'X'. We will populate 'X' in a new column called ŷ for every row
 * Then in second step we will be computing residuals(or we can it as errors or pseudo residuals)
