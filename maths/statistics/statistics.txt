@@ -155,15 +155,26 @@ Gaussian Distribution(or normal Distribution):
 =============================================
 It is a probability distribution that is symmetric about the mean, showing that data near the mean are more frequent in occurrence than data far from the mean. In graph form, normal distribution will appear as a bell curve. 
 In other words, if we have a random variable 'x' which belongs to gaussian distribution with some mean and standard deviation. If this 'x' variables follows the gaussian distribution, then if we take this random variable 'x' and we plot a histogram and probability density function, then we will get a bell curve.
-In this curve, central point is mean, if we go one position to right it is μ+σ, for left μ-σ.
+In this curve, central point is mean, if we go one position to right it is μ+σ, for left μ-σ, if we go to two positions to left then it is μ-2σ and for two positions right it is μ+2σ and so on.
 
 Empirical formula in Gaussian Dist:
-	Prob(μ-σ <= x < μ+σ) ~ 68%
-	Prob(μ-2σ <= x < μ+2σ) ~ 95%
-	Prob(μ-3σ <= x < μ+3σ) ~ 99.7%
+	Prob(μ-σ <= x <= μ+σ) ~ 68%  // Range of 1st standard deviation; it means 68% of data points belonging to random variable x falls within range of 1st standard deviation.
+	Prob(μ-2σ <= x <= μ+2σ) ~ 95%  // Range of 2nd standard deviation
+	Prob(μ-3σ <= x <= μ+3σ) ~ 99.7%  // Range of 3rd standard deviation
 	(Refer: https://towardsdatascience.com/understanding-the-68-95-99-7-rule-for-a-normal-distribution-b7b7cbf760c2)
 	The normal distribution is commonly associated with the 68-95-99.7 rule which you can see in the image above. 68% of the data is within 1 standard deviation (σ) of the mean (μ), 95% of the data is within 2 standard deviations (σ) of the mean (μ), and 99.7% of the data is within 3 standard deviations (σ) of the mean (μ).
 
+Three points that should come to mind when talking about normal distribution:
+- Bell shaped curve
+- Area under the curve is 1
+- Bell shaped curve is symmetrical
+
+
+Standard normal form
+====================
+It is also a normal distribution but with some added properties
+- μ(mean or population average) is 0
+- σ(population std dev) is 1 
 
 Chebyshev's Inequality:
 ======================
