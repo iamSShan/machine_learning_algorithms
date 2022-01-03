@@ -6,11 +6,12 @@
 (In statistics and machine learning, ensemble methods use multiple learning algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algorithms alone.) 
 
 * Random forest is usually trained with the “bagging” method. The general idea of the bagging method is that a combination of learning models increases the overall result.
+* Bagging is also called as bootstrap aggregation.
 * Let's say if we have a dataset D then we will sample this dataset into n samples and we have n models(decision trees), so from this dataset we will pick some sample rows and sample of features in each sample. Selecting sample of rows is done using row sampling with replacement. And sample of features is called as feature sampling. Each decision tree is trained with different sample data. As we are using sample with replacement, then some of records can be common in different datasets. Similar is the case  with feature sampling, feature may get repeated in datasets sample.
 
 * Sampling with replacement is when a unit selected at random from the population is returned to the population and then a second element is selected at random. Whenever a unit is selected, the population contains all the same units, so a unit may be selected more than once. There is no change at all in the size of the population at any stage. This is only a theoretical concept, and in practical situations the sample is not selected by using this selection method. Suppose a population size N=5 and sample size n=2, and sampling is done with replacement. Out of 5 elements, the first element can be selected in 5 ways. The selected unit is returned to the main lot and now the second unit can also be selected in 5 ways.
 
-* Now when to predict, we give that sample to every trained model and (in case of binary classification) we get final output by majority vote.
+* Now when to predict, we give that test sample to every trained model and (in case of binary classification) we get final output by majority vote.
 
 * One big advantage of random forest is that it can be used for both classification and regression problem.
 
@@ -19,7 +20,7 @@
 
 * When we are using decision trees. It has two properties:
 	* Low bias: If we are creating decision tree to its complete depth, then it will be properly trained for our training dataset. 
-	* High variance: If we give new test data0 to these decision tree (created till it's complete depth) is more prone to give high error.
+	* High variance: If we give new test data to these decision tree (created till it's complete depth) is more prone to give high error.
 	* Using above two points we can see we are getting overfitting condition.
 * Now in random forest, we have multiple decision trees, each decision tree will have high variance, but when we combine all decision tree wrt majority vote then high variance is converted into low variance because when we are using row and feature sampling and giving records to decision trees, these trees tend to become expert wrt specific rows and dataset they have as input. Also we are taking majority vote, we are not dependent on a single decision tree. If we would have not used sampling with replacement, then variance could have been high.
 * So random forest gives: low bias and low variance.

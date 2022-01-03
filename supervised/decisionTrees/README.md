@@ -7,10 +7,10 @@
 
  * Root Node: Base node of the tree, it represents the entire sample and this gets classified into two or more homogeneous sets.
  * Leaf Node: We get this when we reach at the end of the tree
- * Splitting: Diving root node or sub-node to further sets based on some condition.
+ * Splitting: Dividing root node or sub-node to further sets based on some condition.
  * Branch/Sub Tree: It is formed, when tree or node is splitted. In other words, it is a sub section of entire tree.
  * Pruning: It is opposite of splitting. It is removing of unwanted branches from tree.
- * Impurity: For example if a bag has just blue color balls and we have to find probability that we pick blue color ball only, then in that case impurtiy is zero. But if that same bag has different color balls, then impurity will be greater than 0.
+ * Impurity: For example if a bag has just blue color balls and we have to find probability that we pick blue color ball only, then in that case impurity is zero. But if that same bag has different color balls, then impurity will be greater than 0.
  
 ### Important terms:
 * **Entropy**: It is the measure of impurity(or purity). It defines randomness in data. It is the first step to solve the problem of decision tree. In order to select best attribute of the node, which can be used for splitting further, we use entropy.
@@ -30,9 +30,9 @@ Entropy values ranges between 0 to 1(1 means completely impure subset, like when
  	* We calculate entropy for each cases and then calculate information gain also, and then compare the information gain.
  	* Formula for Information gain is:
 
- 	![Gini Impurity](images/info_gain_formula.png)
+ 	![Info gain](images/info_gain_formula.png)
 
- 	* E(S) is entropy of the selected node(feature), S is the total subset, Si is nodesubset after splitting, E(Si) is entropy of the subset after splitting
+ 	* E(S) is entropy of the selected node(feature), S is the total subset, Si is node subset after splitting, E(Si) is entropy of the subset after splitting
  	* E(S) uses the same formula of entropy. We use summation as we have to consider all the feature of the subset.
 
 * **Gini Impurity(or Gini Index)**: It is measure of impurity(or purity) used in build decision tree in CART.
@@ -61,7 +61,11 @@ Entropy values ranges between 0 to 1(1 means completely impure subset, like when
 	- When leaf node is reached, store the most common label of the node.
 	- Till above it will be done in training phase, now for predicting, again traverse the tree recursively
 	- At each node consider best split feature of the test feature vector x and traverse left or right; like x[feature_idx] <= threshold
-	- When leaf label is reached then return the most commonn class label.
+	- When leaf label is reached then return the most common class label.
+
+* Outliers does not impact Decision tree as they does not use any distance metrics to calculate .They uses probilities by entropy, information gain or gini index to create the tree.
+* One important property of decision tree is: Decision trees usually have low bias and high variance(overfitting case). We can convert high variance to low variance using simple techniques of hyperparameter tuning like decision tree pruning.
+* In decision tree regressor, entroy and info gain is not used, we use MSE here.
 
 ### Split for Numerical feature
 [Watch this!](https://www.youtube.com/watch?v=5O8HvA9pMew)

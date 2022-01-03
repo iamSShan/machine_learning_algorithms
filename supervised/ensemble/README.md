@@ -41,7 +41,7 @@
 * For example if there are n records and they are passed to first model, then let' say 3 records were incorrectly classified, then next model will take these three records and will try to reduce error. Then let's say this second model also classifies some wrong records then third model will come into play and will try to reduce error if second model. Now this goes on till the specified number of models.
 
 * Unlike bagging all the observations in the bootstrapping sample are not equally treated in boosting. Observations will have some weightage. For a few observations, the weightage will be high for others lower.
-* Suppose we are building a binary classification model. The first model is not accurately predicting the  class 01 target, then the input to the second model will get in sequentially way, saying focus more on predicting target class 01. 
+* Suppose we are building a binary classification model. The first model is not accurately predicting the class 01 target, then the input to the second model will get in sequentially way, saying focus more on predicting target class 01. 
 * When selecting the data samples from the bootstrap sample few observations will have high weightage, in this case the data point which can help in accurately predicting the target class 01 will have higher weightage than the other data points.
 * For the final target, the predictions from all the models will be weighted. Hence the final prediction will be the weighted average.
 * So we can say that: In boosting all the individual models will build one after the other. Each model output will pass as input to the next model along with next model bootstrap sample data. 

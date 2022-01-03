@@ -23,17 +23,17 @@
 		* In our example we get: New sample weight = 1/7 * e^-0895 => 0.05
 		* So here every correctly classfied point will be made 0.05
 
-	* All updated weights can be stored in a new column called `upadted_weight`.		
+	* All updated weights can be stored in a new column called `updated_weights`.		
 	* But if we sum all updated weights we won't get 1, but in case of sample weights sum of all was 1. So here we just divide each entry in updated weights column by total sum of updated_weight column.
 	* If entries in updated_weight column were: 0.05, 0.05, 0.349, 0.05, 0.05, 0.05, 0.05, if we sum it we get 0.649, so we divide each entry with 0.649 so updated_weight column becomes = 0.07, 0.07, 0.53, 0.07, 0.07, 0.07, 0.07
 	* We can store these weights in column are `normalized_weights`
 
-* In next step, we will create a new dataset, we will mostly select wrong records based on these normalized values to train the model. We will first bucketize the normalized weights, our buckets will be 0 to 0.07, 0.07 to 0.14, 0.14 to 0.60, 0.60 to 0.67, 0.67 to 0.74....and so on (basically we adding 0.07 at each step; 0.60 came from adding 0.07 to 0.53 weight)
-* Now our algo will run 8 iteration(as 7 are total records) to select different different records from old dataset. Let' say in first iteration a random value of 0.43 is selected then we will check in which bucket this random value fall, we can see it falls in the incorreclty classified record bucket, then wrong record will be added to the new dataset. If again random value comes 0.31, then again incorrectly classified record bucket will be selected. Similarly it will be going on. Note that, a single record can be inserted in new data more than once.
+* In next step, we will create a new dataset, we will mostly select wrong records based on these normalized values to train the model. We will first bucketize the normalized weights, our buckets will be 0 to 0.07, 0.07 to 0.14, 0.14 to 0.60, 0.60 to 0.67, 0.67 to 0.74....and so on (basically we are adding 0.07 at each step; 0.60 came from adding 0.07 to 0.53 weight)
+* Now our algo will run 8 iterations (as total records are 7) to select different different records from old dataset. Let's say in first iteration a random value of 0.43 is selected then we will check in which bucket this random value fall, we can see it falls in the incorreclty classified record bucket, then wrong record will be added to the new dataset. If again random value comes 0.31, then again incorrectly classified record bucket will be selected. Similarly it will be going on. Note that, a single record can be inserted in new data more than once.
 
 * Now again based on this new dataset we will create new stump, we will use same methodology as discussed in above points. But in the second base learner model we won't be using `sample_weights`, we will use `normalized_weights`.
 
-* Now let's say there were 3 stumps, these got trained, now for test data, we will pass it to all three stumps and let's say first stump outputs 1, second gives 0, third gives 1. Then we can select on basis of majoirty vote. So here we can 1 will be given as output.
+* Now let's say there were 3 stumps, these got trained, now for test data, we will pass it to all three stumps and let's say first stump outputs 1, second gives 0, third gives 1. Then we can select on basis of majority vote. So here we can 1 will be given as output.
 
 * So here we can say that, in AdaBoost we are combining weak learners(multiple base learning models) and we are making it as strong learner.
 

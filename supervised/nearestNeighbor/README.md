@@ -14,8 +14,8 @@
 ### KNN Algorithm:
 	* Load the data
 	* Initialize K to your chosen number of neighbors
-	* For each example in the data
-		1. Calculate the distance between the query example(for which we have to predict the category) and the current example from the data.
+	* For each point in the test data do the following -
+		1. Calculate the distance between test data and each row of training data with the help of any of the method namely: Euclidean, Manhattan or Hamming distance.
 		2. Add the distance and the index of the example to an ordered collection
 	* Sort the ordered collection of distances and indices from smallest to largest (in ascending order) by the distances
 	* Pick the first K entries from the sorted collection
