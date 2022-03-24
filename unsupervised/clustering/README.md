@@ -1,6 +1,5 @@
 ## Clustering
 
-
 * Clustering is the task of dividing the population or data points into a number of groups such that data points in the same groups are more similar to other data points in the same group than those in other groups. In simple words, the aim is to segregate groups with similar traits and assign them into clusters.
 
 * For e.g: Suppose, you are the head of a rental store and wish to understand preferences of your customers to scale up your business. Is it possible for you to look at details of each customer and devise a unique business strategy for each one of them? Definitely not. But, what you can do is to cluster all of your customers into say 10 groups based on their purchasing habits and use a separate strategy for customers in each of these 10 groups. And this is what we call clustering.
@@ -14,3 +13,7 @@
 	* K Means Clustering
 	* Hierarchical Clustering
 	* Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
+
+* K-means is sensitive to outliers.
+* Also read(for Kmeans ++): https://www.geeksforgeeks.org/ml-k-means-algorithm/
+* https://www.youtube.com/watch?v=XtE7hqFsYc4
