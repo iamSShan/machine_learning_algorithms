@@ -33,3 +33,4 @@
 Here in this scenario, the outliers will impact the classification/prediction of the model. The appropriate class for the new data point, according to the following diagram, should be “Category B” in green. The model, however, would be unable to have the appropriate classification due to the existence of outliers. As a result, removing outliers before using KNN is recommended.
 * In case of binary classification, try to keep K value odd, as if it is kept even then, there is a possibility that both categories can have equal neighbors. Then we can't decide which is the nearest category(as we select mode in classification).
 * In regression, there are no categories (we can assume that we have just a single value plotted to graph) so for K=5, we try to find mean of 5 nearest data point values.
+* There are multiple variants of KNN, in scikit learn some algorithm used to compute the nearest neighbors: ball_tree, kd_tree, brute.
