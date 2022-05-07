@@ -1,0 +1,52 @@
+Skewed Distribution
+===================
+
+- In probability theory and statistics, skewness is a measure of the asymmetry of the probability distribution of a real-valued random variable about its mean. The skewness value can be positive, zero, negative, or undefined.
+
+- If we have some data and if we plot it on any histogram or any other similar graph and then if we see a elongated line i.e. if one tail is longer than another, the distribution is skewed. These distributions are sometimes called asymmetric or asymmetrical distributions as they don’t show any kind of symmetry.
+
+
+* Normal Distribution
+  -------------------
+
+- The normal distribution is a symmetric distribution with no skew. The tails are exactly the same.
+
+![Symmetrical Distribution](images/sym_dist.png)
+
+- Most of the machine learning algorithms likes the data to have this kind of distribution.
+
+- Here mean = median = mode (approximately equal)
+
+- Examples of normal distribution:
+	-- weight distribution
+	-- height distribution
+	-- age distribution
+
+
+* Left-skewed Distribution
+  ------------------------
+
+- A left-skewed distribution has a long left tail. Left-skewed distributions are also called negatively-skewed distributions. That’s because there is a long tail in the negative direction on the number line. The mean is also to the left of the peak.
+
+![Left Skewed](images/left_skewed.jpeg)
+
+- Here mode > median > mean
+
+- Examples of left-skewed distribution:
+	-- life span of human
+	-- age of retirement
+
+
+* Right-skewed Distribution
+  -------------------------
+
+- A right-skewed distribution has a long right tail. Right-skewed distributions are also called positive-skew distributions. That’s because there is a long tail in the positive direction on the number line. The mean is also to the right of the peak.
+
+![Right Skewed](images/right_skewed.jpeg)
+
+
+- Examples of right-skewed distribution:
+	-- wealth distribution in world
+	-- salary in a company
+
+- Here mean > median > mode

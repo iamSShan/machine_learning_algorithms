@@ -1,0 +1,169 @@
+
+Covariance:
+==========
+Covariance is a measure of how much two random variables vary together. It’s similar to variance, but where variance tells you how a single variable varies, co variance tells you how two variables vary together.
+Formula is:
+Cov(X,Y) = Σ (Xi-μ)*(Yi-ν) / n where:
+
+X is a random variable
+μ is the expected value (the mean) of the random variable X and
+ν is the expected value (the mean) of the random variable Y
+n = the number of items in the data set
+Let's if X increases and Y also increases, covariance will be +ve, if X increases and Y decreases it will be -ve
+
+But it doesn't tell how much positive or negative it will be, therefore we use another technique called Pearson Correlation Coefficient.
+
+Pearson Correlation Coefficient:
+===============================
+Let's say if we have two features Height(independent feature) and Weight(dependent feature), then how we can find relationship between these two features. Relationship means If Height increases will Weight increase or not or if Height decreases, will Weight decrease or not. Now we can find it using covariance, but to also find it's magnitude we use Pearson Correlation Coefficient. 
+Formula:
+Pearson Correlation Coefficient(X, Y) = Cov(X,Y)/ (σx*σy) // Where σx is std dev of X and σy is std dev of Y
+Here the value always ranges b/w -1 to 1
+For e.g, if we have two independent features X and Y and a dependent variable Z, and if Pearson Correlation Coefficient is 1 then we can say both features are similar(as X increases then Y increases) then we can drop one of the feature and apply ML algorithm using one of the independent feature and the dependent feature.
+
+
+Spearman's rank correlation coefficient:
+=======================================
+It is more better option than Pearson Correlation Coefficient.
+The Spearman rank correlation coefficient, rs, is the nonparametric version of the Pearson correlation coefficient. Your data must be ordinal, interval or ratio. Spearman’s returns a value from -1 to 1, where:
++1 = a perfect positive correlation between ranks
+-1 = a perfect negative correlation between ranks
+0 = no correlation between ranks.
+(When the word “non parametric” is used in stats, it doesn’t quite mean that you know nothing about the population. It usually means that you know the population data does not have a normal distribution.)
+
+Formula:
+Spearman's rank correlation coefficient(X, Y) = Cov(Xrank,Yrank)/ (σrx*σry) 
+// Where we are calcuating covariance of Rank of X and Y
+// Where σrx is std dev of rank of X and σy is std dev of rank of Y
+
+Only if all n ranks are distinct integers, it can be computed using the popular formula
+rs = 1 -  (6Σdi^2/(n(n^2)-1)
+// where di = rg(Xi) - rg(Yi) is the difference between the two ranks of each observation,
+// n is the number of observations
+
+For e.g:
+The raw data in the table below is used to calculate the correlation between the IQ of a person with the number of hours spent in front of TV per week
+
+IQ  	Hours of TV per week
+106	 	7
+100		27
+86		2
+101		50
+99		28
+103		29
+97		20
+113		12
+112		6
+110		17
+
+Firstly, evaluate di^2. To do so use the following steps, reflected in the table below.
+	- Sort the data by the first column Xi. Create a new column xi and assign it the ranked values 1, 2, 3, ..., n.
+	- Next, sort the data by the second column Yi. Create a fourth column yi and similarly assign it the ranked values 1, 2, 3, ..., n.
+	- Create a fifth column di to hold the differences between the two rank columns xi and yi
+	- Create one final column di^2 to hold the value of column di squared.
+
+IQ(Xi)	Hours of TV per week(Yi)	rank xi	 rank yi	 di	    di^2
+86		2							1		 1		     0		0
+97		20							2		 6		     −4		16
+99		28							3		 8		     −5		25
+100		27							4		 7		     −3		9
+101		50							5		 10		     −5		25
+103		29							6		 9		     −3		9
+106		7							7		 3		     4		16
+110		17							8		 5		     3		9
+112		6							9		 2		     7		49
+113		12							10		 4		     6		36
+With di^2 found, add them to find Σdi^2 = 194. The value of n is 10. These values can now be substituted back into the equation:
+p = 1 -  (6Σdi^2/(n(n^2)-1)
+We get,
+p = 1 - (6*194/10(10^2 - 1))
+p = −29/165 = −0.175757575
+That the value is close to zero shows that the correlation between IQ and hours spent watching TV is very low, although the negative value suggests that the longer the time spent watching television the lower the IQ. In the case of ties in the original values, this formula should not be used; instead, the Pearson correlation coefficient should be calculated on the ranks (where ties are given ranks, as described above
+
+
+
+
+Standard normal form
+====================
+It is also a normal distribution but with some added properties
+- μ(mean or population average) is 0
+- σ(population std dev) is 1 
+
+Chebyshev's Inequality:
+======================
+We know if a random variable X ∈ gaussian distribution(with some mean and std dev) then we have empirical formula telling that how much percentage of data points fall in the regions.(68-95-99.7)
+Let's say, if we have a random variable Y, which ∉ gaussian distribution, then how we can find percentage of data points falling in the those ranges. We can use chebyshev's inequality.
+
+It says that, if we have to find out the probability of a random variable falling within the range of standard deviation
+i.e. Prob(μ-σ <= x < μ+σ) , it will be >= 1- 1/k^2
+k means for which range of std deviation we have to find percentage of data points
+Prob(μ-kσ <= x < μ+kσ) >= 1- 1/k^2
+
+For k = 2 => Prob(μ-2σ <= x < μ+2σ) >= 1- 1/2^2 => Prob(μ-2σ <= x < μ+2σ) >= 3/4 => Prob(μ-2σ <= x < μ+2σ) >= 75%
+For k = 3 => Prob(μ-3σ <= x < μ+3σ) >= 1- 1/3^2 => Prob(μ-3σ <= x < μ+3σ) >= 8/9 => Prob(μ-2σ <= x < μ+2σ) >= 88.8%
+
+
+Log Normal Distribution:
+=======================
+Here X(random var.) ∈ log normal distribution; if ln(X) is normally distributed
+For e.g: X = {x1, x2,...xn}
+Logs = {log(x1), log(x2), log(x2)....log(xn)}; if we plot these values and if it normally distributed(we get a bell curve), then X ∈ log normal distribution.
+In log normal distribution, curve is similar as bell curve but at the right side end it goes constant. We can see this curve in income.
+
+
+Central limit theorem:
+=====================
+Let's consider a random variable `x`, which may or may not belong to gaussian distribution.
+Then central limit theorem specifies:
+(Refer: https://www.youtube.com/watch?v=PUBZC2MJ50Y&list=PLZoTAELRMXVMhVyr3Ri9IQ-t5QPBtxzJO&index=10)
+
+
+
+PDF(Probability Density Function):
+=================================
+- In probability theory, a probability density function (PDF), or density of a continuous random variable, is a function whose value at any given sample (or point) in the sample space (the set of possible values taken by the random variable) can be interpreted as providing a relative likelihood that the value of the random variable would equal that sample. 
+- In other words, while the absolute likelihood for a continuous random variable to take on any particular value is 0 (since there are an infinite set of possible values to begin with), the value of the PDF at two different samples can be used to infer, in any particular draw of the random variable, how much more likely it is that the random variable would equal one sample compared to the other sample.
+- Probability density function (PDF) is a statistical expression that defines a probability distribution (the likelihood of an outcome) for a discrete random variable (e.g., a stock or ETF) as opposed to a continuous random variable. The difference between a discrete random variable is that you can identify an exact value of the variable. For instance, the value for the variable, e.g., a stock price, only goes two decimal points beyond the decimal (e.g. 52.55), while a continuous variable could have an infinite number of values (e.g. 52.5572389658…).
+
+Outlier:
+=======
+An outlier is a data point in a data set that is distant from all other observations. A data point that lies outside the overall distribution of the dataset.
+
+Criteria to identify an outlier:
+- Data point that falls outside of 1.5 times of an interquartile range above the 3rd quartile and below the 1st quartile.
+- Data point that falls outside of 3 standard deviations. we can use a z score and if the z score falls outside of 2 standard deviation.
+
+Reason for an outlier to exists in a dataset:
+- Variability in the data
+- An experimental measurement error
+
+Impacts of having outliers in a dataset:
+- It causes various problems during our statistical analysis.
+- It may cause a significant impact on the mean and the standard deviation.
+
+Various ways of finding the outlier:
+- Using scatter plots (by plotting this we can visualize outliers)
+- Box plot
+- using z score
+- using the IQR interquartile range
+
+
+
+Normalization vs Standarization in Feature Scaling:
+==================================================
+- Feature scaling is a method used to normalize the range of independent variables or features of data. In data processing, it is also known as data normalization.
+- It is performed during the data pre-processing to handle highly varying magnitudes or values or units. If feature scaling is not done, then a machine learning algorithm tends to weigh greater values, higher and consider smaller values as the lower values, regardless of the unit of the values.
+- Example: If an algorithm is not using feature scaling method then it can consider the value 3000 meter to be greater than 5 km but that’s actually not true and in this case, the algorithm will give wrong predictions. So, we use Feature Scaling to bring all values to same magnitudes and thus, tackle this issue.
+
+- Normalization helps us to scale down the feature between 0 and 1.
+- Standarization will help to scale down the feature based on standard normal distribution. In standard normal distribution, mean is usually 0 and std dev is usually 1.
+
+
+Binomial Distribution
+=====================
+A binomial distribution can be thought of as simply the probability of a SUCCESS or FAILURE outcome in an experiment or survey that is repeated multiple times. The binomial is a type of distribution that has two possible outcomes (the prefix “bi” means two, or twice). For example, a coin toss has only two possible outcomes: heads or tails and taking a test could have two possible outcomes: pass or fail.
+
+    The first variable in the binomial formula, n, stands for the number of times the experiment runs.
+    The second variable, p, represents the probability of one specific outcome.
+
+For example, let’s suppose you wanted to know the probability of getting a 1 on a die roll. if you were to roll a die 20 times, the probability of rolling a one on any throw is 1/6. Roll twenty times and you have a binomial distribution of (n=20, p=1/6). SUCCESS would be “roll a one” and FAILURE would be “roll anything else.” If the outcome in question was the probability of the die landing on an even number, the binomial distribution would then become (n=20, p=1/2). That’s because your probability of throwing an even number is one half. 

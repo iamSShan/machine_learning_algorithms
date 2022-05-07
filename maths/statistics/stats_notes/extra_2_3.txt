@@ -1,0 +1,138 @@
+Variance and Standard Deviation:
+===============================
+Let's say there are two datasets: {1,1,,2,2,4}  and {2,2,2,2,2}; mean(μ) of both are same, then how we will distinguish the datasets. So to see how two distributions are different we can use variance and standard deviation.
+
+Sample of height = {168, 170, 150, 160, 182, 140, 175}
+Variance = v = 1/n Σ(i=1 to n) (xi- μ)^2  // μ is mean
+Standard deviation = √v
+
+- Variance measures how far a set of data is spread out. A variance of zero indicates that all of the data values are identical. All non-zero variances are positive. A small variance indicates that the data points tend to be very close to the mean, and to each other. A high variance indicates that the data points are very spread out from the mean, and from one another. Variance is the average of the squared distances from each point to the mean.
+
+- Standard Deviation is a measure of how spread out numbers are. Its symbol is σ (the greek letter sigma). Or you can say Standard deviation shows how much variation (dispersion, spread, scatter) from the mean exists. It represents a "typical" deviation from the mean. It is a popular measure of variability because it returns to the original units of measure of the data set. A low standard deviation indicates that the data points tend to be very close to the mean. A high standard deviation indicates that the data points are spread out over a large range of values.
+The standard deviation can be thought of as a "standard" way of knowing what is normal (typical), what is very large, and what is very small in the data set.
+
+Difference between variance and std:
+- Variance is a method to find or obtain the measure between the variables that how are they different from one another, whereas standard deviation shows us how the data set or the variables differ from the mean or the average value from the data set.
+
+Quartile vs Percentile vs Quantile:
+==================================
+* For percentile check 2_basic_stats.pdf.
+* Quartiles go from 1 to 4 (or 0 to 4). First quartile is 25th percentile, Second quartile is median, Third quartile is 75th percentile and Fourth quartile is 100th percentile
+Quantiles can go from anything to anything. Percentiles and quartiles are examples of quantiles.
+
+  0 quartile = 0 quantile = 0 percentile
+  1 quartile = 0.25 quantile = 25 percentile
+  2 quartile = .5 quantile = 50 percentile (median)
+  3 quartile = .75 quantile = 75 percentile
+  4 quartile = 1 quantile = 100 percentile
+
+* Comparing above, quantile in this answer refers to a quantile function, while another usage of quantile relates to the division of [0, 1] range of probabilities into equal chunks. n-quantile means division into n chunks 
+
+* IQR(inter quartile range):
+  -------------------------
+If we have some numbers: 16, 5, 3, 7, 1, 2, 8, 10
+First we sort them: 1, 2, 3, 5, 7, 8, 10, 16
+Here 1 is 0th percentile(which means there are 0% of numbers that are less than 1)
+Here 2 will 10th percentile(as we have 10 numbers total[0, 10, 20, 30, 40..100]); only 10% numbers are less than 2(10/100 *10 = 1 number)
+Similarly 3 is 20th percentile and goes on.
+
+In IQR, we focus on 25 percentile and 75 percentile, then 
+IQR = 75%-25% 
+
+
+Distribution:
+============
+- Suppose we have a dataset, age ={23, 34,23, 26, 27, 28, 30, 39, 44,67,89, 99, 23, 34, ....}
+- Now this is continuous data, in this case we need to visualize this data. There are multiple ways to visualize this data using multiple graphs(these graphs are important in reporting and EDA).
+- One way is to plot data using histogram.
+- There are multiple distributions like: Gaussian, Standard normal, etc.
+- Why different different distribtions are there: So we can have some idea about dataset
+
+Gaussian Distribution(or normal Distribution):
+=============================================
+It is a probability distribution that is symmetric about the mean, showing that data near the mean are more frequent in occurrence than data far from the mean. In graph form, normal distribution will appear as a bell curve. 
+In other words, if we have a random variable 'x' which belongs to gaussian distribution with some mean and standard deviation. If this 'x' variables follows the gaussian distribution, then if we take this random variable 'x' and we plot a histogram and probability density function, then we will get a bell curve.
+In this curve, central point is mean(or median or mode), if we go one position to right(one std dev to right) it is μ+σ, for left μ-σ, if we go to two positions to left then it is μ-2σ and for two positions right it is μ+2σ and so on.
+
+Empirical formula in Gaussian Dist:
+  Prob(μ-σ <= x <= μ+σ) ~ 68%  // Range of 1st standard deviation; it means 68% of data points falls within range of 1st standard deviation.
+  Prob(μ-2σ <= x <= μ+2σ) ~ 95%  // Range of 2nd standard deviation
+  Prob(μ-3σ <= x <= μ+3σ) ~ 99.7%  // Range of 3rd standard deviation
+  (Refer: https://towardsdatascience.com/understanding-the-68-95-99-7-rule-for-a-normal-distribution-b7b7cbf760c2)
+  The normal distribution is commonly associated with the 68-95-99.7 rule which you can see in the image above. 68% of the data is within 1 standard deviation (σ) of the mean (μ), 95% of the data is within 2 standard deviations (σ) of the mean (μ), and 99.7% of the data is within 3 standard deviations (σ) of the mean (μ).
+
+Three points that should come to mind when talking about normal distribution:
+- Bell shaped curve
+- Area under the curve is 1
+- Bell shaped curve is symmetrical
+
+
+Z-score:
+-------
+- Now let's say we have μ(mean) = 4 and σ(std dev) =1 and we want to find in a distribution(gaussian) where does a number falls like 4.5 or 4.85, it falls in 0.5 std dev and 0.85 dev to right, 4.5 is easy but in case of 4.85 it may be difficult to do calculation(using empirical formula). So we can use concept of zscore.
+- Z-score describes for a value that how much standard deviations it is away from the mean.
+- So in above example we get: (4.85-4)/1 = 0.85 std dev to right(as +ve value)
+- If a Z-score is 0, it indicates that the data point's score is identical to the mean score. A Z-score of 1.0 would indicate a value that is one standard deviation from the mean. Z-scores may be positive or negative, with a positive value indicating the score is above the mean and a negative score indicating it is below the mean.
+- A z-score can be placed on a normal distribution curve. Z-scores range from -3 standard deviations (which would fall to the far left of the normal distribution curve) up to +3 standard deviations (which would fall to the far right of the normal distribution curve). In order to use a z-score, you need to know the mean μ and also the population standard deviation σ. If any data point falls away from this 3rd standard deviation then it will considered as outlier.
+- The basic z score formula for a sample is:   z = (x – μ) / σ
+
+- Let' say if we have dataset = {1,2,3,4,5,6,7} with μ=4 and σ = 1 and we apply z-score to each value, we will get: {-3,-2,-1, 0, 1, 2, 3}
+- Now what is this? This is standard normal distribution. One important property of std normal dist is: mean = 0 and std dev = 1)
+- Now what is the use of it? In feature engineering we use use `standardization`, where we apply this formula only for each feature. So, Standardization is the process where we try to convert a distribution into std normal dist where μ = 0 and σ = 1.
+- Also read: https://www.statisticshowto.com/tables/z-table/
+
+
+Normalization:
+-------------
+- Standardization is scaling technique where the values are centered around the mean with mean as 0 and unit standard deviation. We use z = (x – μ) / σ
+- Normalization is another scaling technique in which values are shifted and rescaled so that they end up ranging between 0 and 1(or any other lower and upper bound like -1 to 1). If we use [0,1] then it is also known as Min-Max scaling.
+- Minimum and maximum value of features are used for scaling in Normalization and Mean and standard deviation is used for scaling in Standardization.
+- Scales values between [0, 1] or [-1, 1] in Normalization and It is not bounded to a certain range in Standardization.
+- Min Max Scaler: X_new = (X - X_min)/(X_max - X_min)
+
+PDF vs CDF:
+----------
+PDF:
+- A probability density function (pdf) tells us the probability that a random variable takes on a certain value.(PDF looks at probability at one point.)
+- For example, suppose we roll a dice one time. If we let x denote the number that the dice lands on, then the probability density function for the outcome can be described as follows:
+P(x < 1) : 0
+P(x = 1) : 1/6
+P(x = 2) : 1/6
+P(x = 3) : 1/6
+P(x = 4) : 1/6
+P(x = 5) : 1/6
+P(x = 6) : 1/6
+P(x > 6) : 0
+- Note that this is an example of a discrete random variable, since x can only take on integer values.
+- For a continuous random variable, we cannot use a PDF directly, since the probability that x takes on any exact value is zero.
+CDF:
+- A cumulative distribution function (cdf) tells us the probability that a random variable takes on a value less than or equal to x.(Cumulative is the total probability of anything below it.)
+- For example, suppose we roll a dice one time. If we let x denote the number that the dice lands on, then the cumulative distribution function for the outcome can be described as follows:
+P(x ≤ 0) : 0
+P(x ≤ 1) : 1/6
+P(x ≤ 2) : 2/6
+P(x ≤ 3) : 3/6
+P(x ≤ 4) : 4/6
+P(x ≤ 5) : 5/6
+P(x ≤ 6) : 6/6
+P(x > 6) : 0
+- Notice that the probability that x is less than or equal to 6 is 6/6, which is equal to 1. This is because the dice will land on either 1, 2, 3, 4, 5, or 6 with 100% probability.
+- This example uses a discrete random variable, but a continuous density function can also be used for a continuous random variable.
+
+- In technical terms, a probability density function (pdf) is the derivative of a cumulative distribution function (cdf). 
+
+
+PDF vs PMF vs CDF:
+-----------------
+* PDF and CDF are commonly used techniques in the Exploratory data analysis to finding the probabilistic relation between the variables.
+* PDF is a statistical term that describes the probability distribution of the continuous random variable
+* PDF most commonly follows the Gaussian Distribution. If the features / random variables are Gaussian distributed then PDF also follows Gaussian Distribution. On PDF graph the probability of single outcome is always zero, this happened because the single point represents the line which doesn’t cover the area under the curve.
+
+* PMF is a statistical term that describes the probability distribution of the Discrete random variable
+* People often get confused between PDF and PMF. The PDF is applicable for continues random variable while PMF is applicable for discrete random variable For e.g, Throwing a dice (You can only select 1 to 6 numbers (countable) )
+
+* CDF is applicable for describing the distribution of random variables either it is continuous or discrete
+* For example, if X is the height of a person selected at random then F(x) is the chance that the person will be shorter than x. If F(180 cm)=0.8. then there is an 80% chance that a person selected at random will be shorter than 180 cm (equivalently, a 20% chance that they will be taller than 180cm)
+
+
+

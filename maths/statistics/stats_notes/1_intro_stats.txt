@@ -1,0 +1,160 @@
+Data:
+====
+Data: Facts or pieces of information that can be measured. Eg: IQ of class students, ages of students in class
+Data are of two types:
+ - Qualitative: Qualitative data deals with characteristics	and descriptors that can't be easily measured but can be observed subjectively.
+ - Quantitative: Quantitative data deals with numbers and things you can measure objectively.
+
+ Qualitative can be divided into:
+ - Nominal data: Data with no inherent order or ranking such as gender or race, such kind of data is called Nominal data.
+ - Ordinal data: Data with ordered series. Like Ratings (Good, Avg, Bad) for different customers.
+
+ Quantitative can be divided into:
+ - Discrete data: Also known as categorical data, it can hold number of possible values. E.g: Number of students in class, email is spam or not.
+ - Continuous data: Data that can hold infinite number of possible values. Eg: Weight of the person.
+
+
+Statistics:
+==========
+ - Statistics is science of collecting, organizing and analyzing data.
+ - It is an Area of applied mathematics concerned with the data collection, analysis, interpretation and presentation.
+ - Applied mathematics involves the application of mathematics to problems which arise in various areas, e.g. physics, engineering, medicine, biology, business, computer science, and industry, and/or the development of new or improved methods to meet the challenges of new problems. Thus, Applied mathematics is a combination of mathematical science and specialized knowledge.
+
+- We view applied math as the application of mathematics to real-world problems with the dual goal of explaining observed phenomena and predicting new, as yet unobserved, phenomena. Therefore, the emphasis is on both the mathematics, e.g. the development of new methods to meet the challenges of new problems, and the real world.
+ 
+Types of Statistics:
+===================
+	1) Descriptive Stats: It consists of organizing and summarizing data
+
+	2) Inferential Stats: Technique where in we use the data that we have measured to form conclusion.
+
+	Eg: There is a class of students with following marks: {86, 87, 78, 55, 76, 69, 70,....}
+	Questions that will be in descriptive stats:
+		- Mean/Median/Mode of marks of students
+	Questions that will be in inferential stats:
+		- Are the marks of this class student similar to other class student marks?
+
+Basic terminologies used in Statistics:
+======================================
+ - Population(denoted by N): A collection or set of individuals or objects or events whose properties are to be analyzed.
+ - Sample(denoted by n): A subset of population.
+ - Population Mean: Mean of population. Denoted by μ. Formula: μ = ( Σ Xi ) / N. Here population vaiance: σ² =  Σ(i=1 to n) (xi-μ)/N
+ - Sample mean: Mean of a sample. Denoted by x̄. Formula:  x̄ = ( Σ xi ) / n. For sample variance here: S² = Σ(i=1 to n) (xi-x̄) / n-1
+ - Why we divide by n-1 in sample variance(because of unbiased estimation/Bessel's correction): https://www.youtube.com/watch?v=vGsRwB3TsiE&t=140s or https://www.youtube.com/watch?v=KkaU2ur3Ymw&t=305s
+ 
+Sampling:
+========
+* Sampling helps a lot in research. It is one of the most important factors which determines the accuracy of your research/survey result.
+* Population is the collection of the elements which has some or the other characteristic in common. Number of elements in the population is the size of the population.
+* Sample is the subset of the population. The process of selecting a sample is known as sampling. Number of elements in the sample is the sample size.
+
+* Different types of sampling techniques used in statistics:
+
+- Probabilistic sampling(probability sampling):
+  --------------------------------------------
+  * This Sampling technique uses randomization to make sure that every element of the population gets an equal chance to be part of the selected sample. It’s alternatively known as random sampling.
+  * Types of Probabilistic sampling techniques:
+
+  i) Simple random sampling: In this case each individual is chosen entirely by chance and each member of the population has an equal chance, or probability. It is used when we don’t have any kind of prior information about the target population. 	For e.g: In cricket when we used to do numbering, one person randomly chooses number of batting position of every player while another person pointing out the number by hand backside of 1st person. This is called Simple Random Sampling
+  
+  ii) Systematic sampling:
+   - Here the selection of elements is systematic and not random except the first element.
+   - Individuals are selected at regular intervals from the sampling frame. The intervals are chosen to ensure an adequate sample size. If you need a sample size n from a population of size x, you should select every x/nth individual for the sample.
+   - For example, if you wanted a sample size of 100 from a population of 1000, select every 1000/100 = 10th member of the sampling frame. 
+   To get sample of size n, we divide our population of size N into subgroups of k elements.
+   We select our first element randomly from the first subgroup of k elements. To select other elements of sample, perform following:
+   	-- We know number of elements in each group is k i.e N/n
+   	-- So if our first element is n1 then Second element is n1+k i.e n2, Third element n2+k i.e n3 and so on..
+   	-- Taking an example of N=20, n=5; No of elements in each of the subgroups is N/n i.e 20/5 =4= k
+   	-- Now, randomly select first element from the first subgroup. If we select n1= 3
+   	-- n2 = n1+k = 3+4 = 7; n3 = n2+k = 7+4 = 11
+  - This type of sampling is known as Systematic Random Sampling.
+
+  iii) Stratified sampling:
+  When the population is split into non-overlapping groups(strata).
+  In this method, the population is first divided into subgroups (or strata) who all share a similar characteristic. It is used when we might reasonably expect the measurement of interest to vary between the different subgroups, and we want to ensure representation from all the subgroups. For example, in a study of stroke outcomes, we may stratify the population by sex, to ensure equal representation of men and women. The study sample is then obtained by taking equal sample sizes from each stratum. In stratified sampling, it may also be appropriate to choose non-equal sample sizes from each stratum. Here we need to have prior information about the population to create subgroups.
+
+  In school prayer in the morning there is particular line for every class and different line for boys and girls, so here there are n groups of particular class student. And here if teacher chooses one boy from every class or one girl from every class, this is known as Stratified Random Sampling
+  
+  Ques: Can we do stratified sampling based on designation?
+  Ans: No. For eg: Designation is: Dot net developer, Python developer, Java developer. Then there is a probaility that groups may overlap i.e Python developer might know Java
+  But we can consider this stratified if profession are like doctor, engineer, etc.
+
+
+  iv) Cluster sampling: In a clustered sample, subgroups of the population are used as the sampling unit, rather than individuals. The population is divided into subgroups, known as clusters, then the clusters are randomly selected to be included in the study. Clusters are identified using details such as age, sex, location etc. Assume in school suddenly one guest come and principal ordered every teacher to order all the students to come at playground. This is an immediate order so teacher and students can't make proper lines according to class wise. Here there can be or can't be students of different class are stood in one line. So here every line is called as Cluster. Now teacher order one student from every line, this is called Cluster Random Sampling.
+
+  v) Multi-Stage Sampling: It is the combination of one or more methods described above.
+
+  Notes:
+  Which sampling can be used for following:
+  1) Exit poll: simple random sampling
+  2) RBI does a household survey: They fill survey from women, so either stratified sampling or convenience sampling
+  3) Drug Testing: If drug is for specific age then stratifed else if for all then random
+
+
+- Non probabilistic sampling(non-probability sampling):
+  ----------------------------------------------------
+  * It does not rely on randomization. This technique is more reliant on the researcher’s ability to select elements for a sample.
+  * Outcome of sampling might be biased and makes difficult for all the elements of population to be part of the sample equally.
+  * This type of sampling is also known as non-random sampling.
+  * Types of Non probabilistic sampling techniques:
+  i) Quota sampling
+  ii) Referral/Snowball sampling
+  iii) Convenience sampling: In this sampling, let's say we are doing a survey so only those people who are expert that particular domain(related to survey) will be part of sample.
+  iv) Purposive sampling
+  v) Voluntary Sampling
+ 
+ (Read: https://towardsdatascience.com/sampling-techniques-a4e34111d808)
+ 
+
+Random variables and its types: 
+===============================
+- A random variable is a numerical description of the outcome of a statistical experiment. A random variable that may assume only a finite number or an infinite sequence of values is said to be discrete; one that may assume any value in some interval on the real number line is said to be continuous.
+- For eg: x = 24; here x is a random variable storing 24 as its value, y = "yoo"; here y is also random variable.
+Types of random variable:
+- Numerical random variable: Like age
+  Two types of numerical random variable:
+  -- Discrete random variable: number of people in family(whole number and can't be negative)
+  -- Continuous random variable: weight of people in family, salary(it can be whole number or also can be float)
+- Categorical random variable: Like gender
+
+
+Variable Measurement Scales:
+===========================
+- 4 types of measured variable:
+  -- Nominal data: Categorical data like colors, gender, type of flower
+  -- Ordinal data: Here order matters of data, like ranks of students based on marks, or like ratings (Good, Avg, Bad) for different customers.
+  -- Interval data: Here order and value both matters, natural zero is not present. Eg: Temperature range in Farenheit: 70-80, 80-90, 90-100 (here if 0 faranheit is there then we won't have any meaning of it)
+  -- Ratio data: It has same properties as interval data, with an equal and definitive ratio between each data and absolute “zero” being treated as a point of origin. In other words, there can be no negative numerical value in ratio data. Ratio data has all properties of interval data such as – data should have numeric values, a distance between the two points are equal, etc. but, unlike interval data where zero is arbitrary, in ratio data, zero is absolute. An excellent example of ratio data is the measurement of heights. Height could be measured in centimeters, meters, inches, or feet. It is not possible to have a negative height. 
+
+Mean, Median and Mode:
+=====================
+A measure of central tendency is a single value that attempts to describe a set of data by identifying the central position within that set of data. As such, measures of central tendency are sometimes called measures of central location.
+
+Sample of height = {168, 170, 150, 160, 182, 140, 175}
+Here mean(x̄) = sum of heights/n = 63.5
+Mean specifies measure of central tendency. Which means most of the height will be falling in this region.
+
+For e.g: x = [1,2,3,4,5]
+Here, mean: is 3 for above case
+But let's say, if we add a outlier to the list x = [1,2,3,4,5,50]; then mean will become 10.8
+So we get a big number and different output from previous, so in this case if we want to find out measure of central tendency, we can use median.
+For median, we sort the numbers first, then we take the central number. If total numbers are even them take average of middle two numbers. Therefore here median will be (3+4)/2 = 3.5
+
+Mode: Number with maximum frequency.
+The mode is the only measure you can use for nominal or categorical data that can't be ordered
+For e.g: x = [1,2,3,3,4,5]
+Mean here: 3 // Here 3 is measure of central tendency.
+
+
+Frequency Distribution:
+======================
+Let's say our sample data is: Colors: [R, G, R, B, G, R, B, B]
+color | freq | cummulative_freq
+-------------------------------
+R     |  3   |  3
+G     |  2   |  5   
+B     |  3   |  8
+-------------------------------
+
+For discrete variable we can draw a bar chart and when variable is continuous we can draw histogram
