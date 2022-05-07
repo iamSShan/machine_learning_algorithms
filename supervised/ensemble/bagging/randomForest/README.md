@@ -43,6 +43,7 @@
 	* for classification model: Confusion Matrix, Precision, Recall, F1 score
 	* for regression mode: R2, Adjusted R2, MSE, RMSE, MAE
 
+* Cost Function for random forest: Gini impurity or Entropy, in case of regression it is MSE
 
 ### Hyperparameters in random forest
 
@@ -70,3 +71,10 @@
 * Disadvantages:
 	* Biased with features having many categories.
 	* Biased in multiclass classification problems towards more frequent classes.
+
+
+## Can Random Forest Overfit in any case?
+* Let's say if after the first split, there are 2 nodes here and we have set the maximum terminal nodes as 2. Hence, the tree will terminate here and will not grow further. This is how setting the maximum terminal nodes or max_leaf_nodes can help us in preventing overfitting. 
+
+* But, it can also overfit. this could simply be due to small sample sizes, but more often, the issue is non-random sampling. All statistical modelling methods are based on theory that assumes the data to be a randomly drawn sample from the population it represents. In practice though, models are often developed using data that does not meet that requirement.	
+* For example, if data has some noise in it, two very deep trees will almost surely overfit. You will be (over)fitting the noise.

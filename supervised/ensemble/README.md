@@ -35,10 +35,12 @@
 
 ![Boosting](images/boosting.png)
 
-* In the boosting method, all the individual models are built sequentially. Which means the outcome of the first model passes to the next model and etc. Models here are called as base learning model.
+* In the boosting method, all the individual models are built sequentially. Which means the outcome of the first model passes to the next model and etc. Models here are called as base learning model. 
 
 * In bagging the models are built parallel so we don’t know what the error of each model is. Whereas in boosting once the first model built we know the error of that model. So when we pass this first model to the next model the intention is to reduce the error further. In some boosting algorithm, each model has to reduce a minimum of 50% of error.
-* For example if there are n records and they are passed to first model, then let' say 3 records were incorrectly classified, then next model will take these three records and will try to reduce error. Then let's say this second model also classifies some wrong records then third model will come into play and will try to reduce error if second model. Now this goes on till the specified number of models.
+* For example if there are n records and they are passed to first model, then let' say 3 records were incorrectly classified, then next model will take these three records and will try to reduce error. Then let's say this second model also classifies some wrong records then third model will come into play and will try to reduce error of second model. Now this goes on till the specified number of models.
+
+* Here each model(for eg decision tree) is called as weak leaner. We combine each weak leaner to get a strong learner. Weak learners are models that perform slightly better than random guessing. Strong learners are models that have arbitrarily good accuracy.
 
 * Unlike bagging all the observations in the bootstrapping sample are not equally treated in boosting. Observations will have some weightage. For a few observations, the weightage will be high for others lower.
 * Suppose we are building a binary classification model. The first model is not accurately predicting the class 01 target, then the input to the second model will get in sequentially way, saying focus more on predicting target class 01. 

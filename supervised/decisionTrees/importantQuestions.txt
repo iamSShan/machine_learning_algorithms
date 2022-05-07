@@ -1,0 +1,9 @@
+1) Entropy vs Gini impurity
+- https://www.geeksforgeeks.org/gini-impurity-and-entropy-in-decision-tree-ml/
+- https://quantdare.com/decision-trees-gini-vs-entropy/
+
+2) When to use entropy vs when to use gini impurity in decision trees
+- Calculating 'log' is computationally intensive, hence if the dataset is large calculation of entropy will not be an good idea, in case of large data we can use gini. In case of small dataset we can use entropy. 
+3) Decision tree in regression
+- https://www.youtube.com/watch?v=sLXtCwxg5kI
+

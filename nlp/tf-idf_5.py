@@ -4,7 +4,7 @@ TF-IDF:
 TF: Term Frequency
 IDF: Inverse document frequency
 
-TF = no.of repetition of words in sentence/no. of words in sentence
+TF = no.of time word is repeating in sentence/no. of words in sentence
 IDF = log(no. of sentences/no. of sentences containing the word)
 
 Then at last we do TF * IDF

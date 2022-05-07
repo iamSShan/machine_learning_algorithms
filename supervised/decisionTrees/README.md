@@ -63,9 +63,22 @@ Entropy values ranges between 0 to 1(1 means completely impure subset, like when
 	- At each node consider best split feature of the test feature vector x and traverse left or right; like x[feature_idx] <= threshold
 	- When leaf label is reached then return the most common class label.
 
-* Outliers does not impact Decision tree as they does not use any distance metrics to calculate .They uses probilities by entropy, information gain or gini index to create the tree.
+* Outliers does not impact Decision tree as they does not use any distance metrics to calculate and since the partitioning happens based on the proportion of samples within the split ranges and not on absolute values. They uses probilities by entropy, information gain or gini index to create the tree.
 * One important property of decision tree is: Decision trees usually have low bias and high variance(overfitting case). We can convert high variance to low variance using simple techniques of hyperparameter tuning like decision tree pruning.
-* In decision tree regressor, entroy and info gain is not used, we use MSE here.
+* In decision tree regressor, entroy and info gain is not used, we use MSE here. We use average value in the leaf node.
+
+* The decision tree algorithm is not sensitive to imbalanced datasets because DT creates its own heirarchy.
 
 ### Split for Numerical feature
 [Watch this!](https://www.youtube.com/watch?v=5O8HvA9pMew)
+
+
+### Tree algorithms:
+- ID3, C4.5, C5.0 and CART
+- ID3 (Iterative Dichotomiser 3) was developed in 1986 by Ross Quinlan. The algorithm creates a multiway tree, finding for each node (i.e. in a greedy manner) the categorical feature that will yield the largest information gain for categorical targets. Trees are grown to their maximum size and then a pruning step is usually applied to improve the ability of the tree to generalise to unseen data.
+- C4.5 is the successor to ID3 and removed the restriction that features must be categorical by dynamically defining a discrete attribute (based on numerical variables) that partitions the continuous attribute value into a discrete set of intervals. C4.5 converts the trained trees (i.e. the output of the ID3 algorithm) into sets of if-then rules. This accuracy of each rule is then evaluated to determine the order in which they should be applied. Pruning is done by removing a rule’s precondition if the accuracy of the rule improves without it.
+- CART (Classification and Regression Trees) is very similar to C4.5, but it differs in that it supports numerical target variables (regression) and does not compute rule sets. CART constructs binary trees using the feature and threshold that yields the largest information gain at each node.
+
+- ID3 and C.4.5 use Shannon Entropy to pick features with the greatest information gain as nodes. As an example, let's say we would like to classify animals. You would probably ask more general questions (like "Is it a mammal") first and once confirmed continue with more specific questions (like "is it a monkey"). In terms of information gain the general questions of our toy example gives you more information in addition to what you already know (that it is an animal).
+
+- CART uses Gini Impurity instead. Gini Impurity is a measure of the homogeneity (or "purity") of the nodes. If all datapoints at one node belong to the same class then this node is considered "pure". So by minimising the Gini Impurity the decision tree finds the features the separate the data best.
