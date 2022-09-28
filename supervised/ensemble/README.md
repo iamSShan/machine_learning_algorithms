@@ -53,7 +53,7 @@
 	* We can use multiple loss functions to reduce the error in each sequential models.
 * Cons:
 	* Boosting method tends to over-fitting, As the models build sequentially, all the models try to reduce the train error.
-	* We need special care in turning the hyper-parameters.
+	* We need special care in tuning the hyper-parameters.
 
 
 ### Which one to choose- Bagging or Boosting?

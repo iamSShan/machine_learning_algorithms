@@ -57,6 +57,8 @@ These are collection of classification algorithm based on Bayes theorem.
 	- P(A|B) is posterior probability, P(B|A) is likelihood, P(B) is marginal probability, P(A) is called prior probability
 
 
+- Prior probability represents what is originally believed before new evidence is introduced, and posterior probability takes this new information into account.
+
 - If more than one features are given and we need to use naive bayes classifier, then we will use same formula: P(A|B) = ( P(B|A) * P(A) ) / P(B)
 - Let' say features are x1, x2, x3, xn and we need to find P(y|x1,x2,x3,...xn)
 
@@ -103,5 +105,15 @@ These are collection of classification algorithm based on Bayes theorem.
 * Twitter sentiment analysis
 * Document categorization
 
+### Text Classification using Naive Bayes:
+* Naive Bayes are mostly used in natural language processing (NLP) problems. Naive Bayes predict the tag of a text. They calculate the probability of each tag for a given text and then output the tag with the highest one.
+* There are many different machine learning algorithms we can choose from when doing text classification with machine learning. One family of those algorithms is known as Naive Bayes (NB) which can provide accurate results without much training data. 	
 
-* Naive Bayes are mostly used in natural language processing (NLP) problems. Naive Bayes predict the tag of a text. They calculate the probability of each tag for a given text and then output the tag with the highest one. 
+* In order to leverage the power of bayesian text classification, texts have to be transformed into vectors before classification. Vectors are (sometimes huge) lists of numbers. That’s it.
+
+* Those numbers will help the algorithm decide whether the vector representation of a text belongs to a category or not.
+* Now, one of the many things you can encode in vectors is the probability of appearance of a word or a sequence of words of length n (also known as n-gram) within the words of a text or the words of a category. Since a Naive Bayes text classifier is based on the Bayes’s Theorem, which helps us compute the conditional probabilities of occurrence of two events based on the probabilities of occurrence of each individual event, encoding those probabilities is extremely useful.
+
+* For example, knowing that the probabilities of appearance of the words user and interface in texts within the category Ease of Use of a feedback classifier for SaaS products are higher than the probabilities of appearance within the Pricing or Features categories will help the MNB text classifier predict how likely it is for an unknown text that contains those words to belong to either category.
+* https://analyticsindiamag.com/naive-bayes-why-is-it-favoured-for-text-related-tasks/
+

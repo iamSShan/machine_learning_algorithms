@@ -1,0 +1,40 @@
+* It is a boosting algorithm.
+* It has:
+	- Faster training speed and higher efficiency.
+	- Support of parallel, distributed, and GPU learning.
+	- Lower memory usage.
+	- Better accuracy. 
+
+* LightGBM does smart feature engineering and smart sampling.
+
+
+* Let's say we have 500 records and we have some columns like: Id, Name, Age, Gender, Salary, TargetVariable
+* Then we will create a root and split on that based on information gain.
+* Let's say salary is selected then and on first node 50, 55, 60 and 70, 80, so there is concept of binning here one bin will be 50-60 and second will be 70-80 and it makes LightGBM fast
+
+* Second thing that makes it fast is exclusive feature bundling: 
+For eg, let's say we have a feature
+Male Female
+1    0
+0    1
+1    0
+1    0 
+
+Now a new feature will be created where when Male is 1 then make it as 11 and when female is 1 then make it as 10
+so
+
+Male Female   BundlingFeature
+1    0        11
+0    1        10
+1    0        11
+1    0        11
+
+* Third thing is Gradient based one side sampling: Let's say for model M0 we have 100 features then we will have 100 gradients: G1, G2, G3....G100. Then first step will be to arrange sort it in descending order, let's say after sorting some it comes like G48, G14... G32
+* Now top 20% percentage from this 100 records will be taken out and that will be one part of sample.
+* Then random 10% percentage from remaining 80% will be taken.
+* Then we combine these two and we create a new subset.
+
+* So basically it means if our gradient is low(80% of set) then it means model is doing good on those observations, so we don't need to train them again and again. And in 20% model is not doing good as gradient is high, so model should learn more of these patterns and therefore 20% is taken full and sampling is done from one side only i.e. 80% of remaining data on right.
+* Then on this new dataset we train our model M1 and again follow same steps.
+
+* When we are on local machine or anywhere we don't have GPU, we can use LightGBM.

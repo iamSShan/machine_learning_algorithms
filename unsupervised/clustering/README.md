@@ -17,3 +17,11 @@
 * K-means is sensitive to outliers.
 * Also read(for Kmeans ++): https://www.geeksforgeeks.org/ml-k-means-algorithm/
 * https://www.youtube.com/watch?v=XtE7hqFsYc4
+
+#### K-medians
+* We can use K-medians, as medians are less senstive to outliers
+
+#### K-medoid
+* It is a clustering algo and it is an improved version of K-means.
+* Medoid means least dissimilar object which means most similar object.
+* https://www.youtube.com/watch?v=AUriFHKw0TU
