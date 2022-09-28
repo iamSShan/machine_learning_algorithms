@@ -1,0 +1,98 @@
+###########################################################################################################
+
+Q) Different techniques to convert text to vectors
+
+The various approaches we can take to convert the text into vectors — popularly referred to as Word Embeddings.
+
+Word embedding is the collective name for a set of language modelling and feature learning techniques in natural language processing (NLP) where words or phrases from the vocabulary are mapped to vectors of real numbers. — Wikipedia
+
+Let's say we have these sentences:
+
+He is playing in the field.
+He is running towards the football.
+The football game ended.
+It started raining while everyone was playing in the field.
+
+1. Count Vectorizer:
+
+- The most basic way to convert text into vectors is through a Count Vectorizer.
+- Step 1: Identify unique words in the complete text data. In our case, the list is as follows (17 words):
+ ['ended', 'everyone', 'field', 'football', 'game', 'he', 'in', 'is', 'it', 'playing', 'raining', 'running', 'started', 'the', 'towards', 'was', 'while']
+- Step 2: For each sentence, we’ll create an array of zeros with the same length as above (17)
+- Step 3: Taking each sentence one at a time, we’ll read the first word, find it’s total occurrence in the sentence. Once we have the number of times it appears in that sentence, we’ll identify the position of the word in the list above and replace the same zero with this count at that position. This is repeated for all words and for all sentences
+- So for first sentence it will be: [0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0]
+- sklearn provides the CountVectorizer() method to create these word embeddings. After importing the package, we just need to apply fit_transform() on the complete list of sentences and we get the array of vectors of each sentence.
+
+
+2. TF-IDF Vectorizer:
+- While Count Vectorizer converts each sentence into its own vector, it does not consider the importance of a word across the complete list of sentences. For example, `He` is in two sentences and it provides no useful information in differentiating between the two. Thus, it should have a lower weight in the overall vector of the sentence. This is where the TF-IDF Vectorizer comes into the picture.
+
+- TF-IDF is a product of two parts:
+
+    TF (Term Frequency) — It is defined as the number of times a word appears in the given sentence.
+    IDF (Inverse Document Frequency) — It is defined as the log to the base e of number of the total documents divided by the documents in which the word appears.
+- Step 1: Identify unique words in the complete text data. In our case, the list is as follows (17 words):
+['ended', 'everyone', 'field', 'football', 'game', 'he', 'in', 'is', 'it', 'playing', 'raining', 'running', 'started', 'the', 'towards', 'was', 'while']
+
+- Step 2: For each sentence, we’ll create an array of zeros with the same length as above (17)
+- Step 3: For each word in each sentence, we’ll calculate the TF-IDF value and update the corresponding value in the vector of that sentence
+
+Example:
+- We’ll first define an array of zeros for all the 17 unique words in all sentences combined.
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+- I’ll take the word `he` in the first sentence, He is playing in the field and apply TF-IDF for it. The value will then be updated in the array for the sentence and repeated for all words.
+Total documents (N): 4
+Documents in which the word appears (n): 2
+Number of times the word appears in the first sentence: 1
+Number of words in the first sentence: 6Term Frequency(TF) = 1Inverse Document Frequency(IDF) = log(N/n)
+                                = log(4/2)
+                                = log(2)TF-IDF value = 1 * log(2)
+             = 0.69314718
+
+Updated Vector: [0, 0, 0, 0, 0, 0.69314718, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+
+
+   
+3. Hashing Vectorizer
+- This vectorizer is very useful as it allows us to convert any word into it’s hash and does not require the generation of any vocabulary.
+- Step 1: Define the size of vector to be created for each sentence
+- Step 2: Apply the hashing algorithm (like MurmurHash) to the sentence
+- Step 3: Repeat step 2 for all sentences
+## Output
+# [[ 0.  1.  0.  0.  1.  0.  0.  0.  1.  0.  0. -1. -1.  0.  0.  1.  0.]
+#  [ 1.  1.  0.  0.  1.  0.  0.  0.  1.  0.  0. -2.  0.  0.  0.  0.  0.]
+#  [ 1.  0.  0.  0.  0. -1.  0.  0.  0. -1.  0. -1.  0.  0.  0.  0.  0.]
+#  [ 0.  1.  1.  1.  0.  0. -1.  0.  0.  0. -1. -1. -2.  0. -1.  1.  0.]]
+
+https://towardsdatascience.com/different-techniques-to-represent-words-as-vectors-word-embeddings-3e4b9ab7ceb4
+
+4. Word2Vec
+- These models are highly efficient and performant in understanding the context and relation between words. Similar words are placed close together in the vector space while dissimilar words are placed wide apart.
+- It is so amazing to represent words that it is even able to identify key relationships such that:
+King - Man + Woman = Queen
+- There are two models in this class:
+
+    -- CBOW (Continuous Bag of Words): The neural network takes a look at the surrounding words (say 2 to the left and 2 to the right) and predicts the word that comes in between
+    -- Skip-grams: The neural network takes in a word and then tries to predict the surrounding words
+
+
+
+###########################################################################################################
+
+
+
+Q) How do you handle Out of Vocabulary words in NLP. If you have trained using a limited vocab and the a new word comes, what will you do?
+
+Way1: Ingoring them
+
+Generally, words that are out of vocabulary often appear rarely, the will contribute less to our model. The performance of our model will drop scarcely, it means we can ignore them.
+
+Way 2: Replacing them using <UNK>
+
+We can replace all words that are out of vocabulary by using word <UNK>.
+Way 3:
+
+Another common trick, particularly when working with word embedding based solutions  is to replace the word with a nearby word from some form of synonym dictionary. Example : ‘I want to know what you are consuming’. Suppose `consuming` is not in the vocabulary,  replace it with ‘I want to know what you are eating’. Take a look at the following article for more details. https://medium.com/cisco-emerge/creating-semantic-representations-of-out-of-vocabulary-words-for-common-nlp-tasks-842dbdafba18
+
+###########################################################################################################

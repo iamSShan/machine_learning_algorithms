@@ -1,0 +1,11 @@
+## Cross Entropy
+
+https://towardsdatascience.com/what-is-cross-entropy-3bdb04c13616
+
+## What are the assumptions of linear regression?
+    Linear relationship.
+    Independence: The residuals are independent. In particular, there is no correlation between consecutive residuals in time series data.
+    Normality: The residuals of the model are normally distributed.
+    No or little multicollinearity.
+   
+    Homoscedasticity: https://www.statisticshowto.com/homoscedasticity/

@@ -136,3 +136,35 @@ PDF vs PMF vs CDF:
 
 
 
+
+P value
+=======
+* P value is probability of null hypothesis being true.
+* Let's consider example of laptop mouse pad, if p value in middle is 0.8, it means out of every 100 touches/clicks 80% of time(or 80 times) touch was made here. If we say p=0.01 in left corner, then it means out of 100 touches only 1 time we are touching here.
+* Null hypothesis: An assumption that treates everything equal and similar
+  * For eg: Null hypothesis(H0): Global GDP before pandemic and after pandemic are same
+* Alternate hypothesis(HA): Opposite of null hypothesis.
+  * For eg: Alternate hypothesis: GDP before pandemic and after pandemic are are not same
+* Using data and P-value we decide whether to accept or reject the null hypothesis.
+* For this we do hypothesis testing, steps for the example will be:
+  - Collect the data: Like GDP of different countries
+  - Define Significance level(this is decided by domain expertise person): Let's say if it is 0.05, then it means that if we have 100 countries GDP before and after then null hypothesis will be true for 5 countries.
+  - We need to do some statistical tests like: T-test, Chi-Square, ANOVA, Z-test to obtain P-value
+  - Then accept/reject the null hypothesis
+    -- If P_value <= significance value then reject the null hypothesis
+    -- If P_value > significance value then accept the null hypothesis value
+* If our significance value(α) is 0.05 then our confidence interval is 95%, if α = 0.01 then CI is 99%.
+* So confidence interval depends on α value.
+
+Confidence Intervals
+====================
+
+* Point estimates: When population is very large it is very difficult to know about population mean, so we use sample mean we can try to estimate population mean,
+x̄ --> µ; Here x̄ is point estimate
+
+* So, using this x̄ and confidence interval we can find the range of population mean. Let's say if Confidence interval is 95% then we will ignore 2.5 at each end(imagine bell curve) and our value will be found in that middle range.
+* CI = Point estimate + Margin Error
+* So, 95% Confidence interval is just an interval that covers 95% of the means.
+* Why they are important? Because interval covers 95% of means, we know anything outside of it occurs less than 5% of time. That is to say, the p-value of anything outside of CI is < 0.05
+Q) Find average size of sharks in the sea?
+- We can also solve this using central limit theorem

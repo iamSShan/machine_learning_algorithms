@@ -10,6 +10,16 @@ Now when not considering binary state, we can write frequency instead of 1.
 Here in this table we also have an output column 
 where this words will be independent feature and output will be dependent feature. Then we can train the model using them.
 
+- Bag of words (BoW) builds a vocabulary of all the unique words in our dataset, and associate a unique index to each word in the vocabulary.
+- It is called a "bag" of words, because it is a representation that completely ignores the order of words.
+    
+ - Consider this example of two sentences: (1) John likes to watch movies, especially horor movies. and (2) Mary likes movies too.
+  We would first build a vocabulary of unique words (all lower cases and ignoring punctuations): [john, likes, to, watch, movies, especially, horor, mary, too].
+   Then we can represent each sentence using term frequency, i.e, the number of times a term appears. So (1) would be [1, 1, 1, 1, 2, 1, 1, 0, 0], and (2) would be [0, 1, 0, 0, 1, 0, 0, 1, 1].
+ - A common alternative to the use of dictionaries is the hashing trick, where words are directly mapped to indices with a hashing function.
+ - As the vocabulary grows bigger (tens of thousand), the vector to represent short sentences / document becomes sparse (almost all zeros).
+
+
 Disadvantage of Bag of words: if let's say more than one word has 1 or in other case, more than one word has same frequency,
 then we can not determine which word is more important.
 We can use TF-IDF(term frequency - inverse document frequency), which is better than bag of words.

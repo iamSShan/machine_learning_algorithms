@@ -1,0 +1,20 @@
+- It is used find latent variable. Latent variables are those variables which are not directly observed, and we cannot derive these variables. We can just infer them from previously observed variable.
+- EM Algo is basic for many unsupervised clustering algorithms
+
+Steps involved in EM algo:
+1. Initially, a set of initial values are considered and we need to give that to system(all those values are incomplete)
+2. Expectation step: We use observed data to estimate or guess the values of missing or incomplete data.
+3. Maximization step: Here we use complete data generated in previous step to update the values.
+4. We check if values are converging or not, if converging then stop otherwise repeat Step 2 and 3 till convergence occurs.
+
+Use of EM:
+- Used to fill missing data.
+- Used for unsupervised learning
+- Used to discover values of latent variable
+
+Advantages:
+- With each iteration, likelihood increases
+- E-step and M-step are easy to implement
+
+Disadvantages:
+- Slow convergence

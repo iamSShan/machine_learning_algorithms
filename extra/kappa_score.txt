@@ -1,0 +1,26 @@
+* Kappa Score is an interesting, but an underused metric. Also known as Cohen's Kappa Statistic on the name of Jacob Cohen. Sometimes in machine learning we are faced with a multi-class classification problem. In those cases, measures such as the accuracy, or precision/recall do not provide the complete picture of the performance of our classifier.
+
+* In some other cases we might face a problem with imbalanced classes. E.g. we have two classes, say A and B, and A shows up on 5% of the time. Accuracy can be misleading, so we go for measures such as precision and recall. There are ways to combine the two, such as the F-measure, but the F-measure does not have a very good intuitive explanation, other than it being the harmonic mean of precision and recall.
+
+* Cohen’s kappa statistic is a very good measure that can handle very well both multi-class and imbalanced class problems.
+
+* The fundamental concept behind the Kappa Score is it measures the amount of "agreement" between two values. In classification, one of this is the predicted value and other is the ground truth.💡
+
+* Kappa score takes into consideration not 1, but 2 different accuracy measures. One is the usual Predictions accuracy, and the other one is the Expected accuracy.🤔
+
+* The expected accuracy is the accuracy which can be attained by any random predictions.
+	
+	Kappa Score is calculated as:
+
+	K = (Predicted accuracy - Expected accuracy)/(1 - Expected accuracy)
+
+* It basically tells you how much better your classifier is performing over the performance of a classifier that simply guesses at random according to the frequency of each class.
+
+* Cohen’s kappa is always less than or equal to 1. Values of 0 or less, indicate that the classifier is useless.
+* There is no standardized way to interpret its values. Landis and Koch (1977) provide a way to characterize values. According to their scheme a value < 0 is indicating no agreement , 0–0.20 as slight, 0.21–0.40 as fair, 0.41–0.60 as moderate, 0.61–0.80 as substantial, and 0.81–1 as almost perfect agreement.
+
+* So, if K = 0.4, and expected accuracy is 50%, you can say that your classifier is performing 40% better than the random predictions, meaning a prediction accuracy of 70%.💡
+
+* However, if your expected accuracy itself was 70%, and the model also gave 70% accuracy, K will be 0.🔻
+* A low value of K means, a low level of "agreement" between the classifier and the ground truth.💡
+* Kappa Score can also be used to compare the performance of 2 models in the same fashion.💡

@@ -1,0 +1,191 @@
+----------------------------------------------------------------------------------------------------------------------
+1) Let A and B be events on the same sample space, with P (A) = 0.6 and P (B) = 0.7. Can these two events be disjoint?
+
+Ans) “Disjoint” and “Mutually Exclusive” are equivalent terms. They cannot be disjoint because P(A) + P(B) > 1 here
+
+When event is disjoint P(A∩B) = 0, so P(A∪B) = P(A) + P(B) - 0 = 1.3; as 1.3>1; Hence No
+----------------------------------------------------------------------------------------------------------------------
+2) Alice has 2 kids and one of them is a girl. What is the probability that the other child is also a girl? You can assume that there are an equal number of males and females in the world.
+
+Ans) Total possible outcomes: BG, GB, GG =3
+   Both are Girls: GG =1
+   Therefore: 1/3
+----------------------------------------------------------------------------------------------------------------------
+3) A fair six-sided die is rolled twice. What is the probability of getting 2 on the first roll and not getting 4 on the second roll?
+
+Ans) Here we can see both rolls are independent
+P(For 2): 1/6
+P(For not 4): 5/6
+
+So, 1/6 * 5/6 = 5/36
+----------------------------------------------------------------------------------------------------------------------
+4) Consider a tetrahedral die and roll it twice. What is the probability that the number on the first roll is strictly higher than the number on the second roll? Note: A tetrahedral die has only four sides (1, 2, 3 and 4).
+
+Ans) Total combinations:
+(1,1) (2,1) (3,1) (4,1)
+
+(1,2) (2,2) (3,2) (4,2)
+
+(1,3) (2,3) (3,3) (4,3)
+
+(1,4) (2,4) (3,4) (4,4)
+
+Possible: 6
+Therefore: 6/16 = 3/8
+----------------------------------------------------------------------------------------------------------------------
+
+5) Which of the following options cannot be the probability of any event?
+a) -0.00001
+b) 0.5
+c) 1.001
+
+A) Only a B) Only b C) Only c D) a and B E) b and c F) a and c
+
+Ans) F) a and c
+----------------------------------------------------------------------------------------------------------------------
+
+6) Anita randomly picks 4 cards from a deck of 52-cards and places them back into the deck (Any set of 4 cards is equally likely). Then, Babita randomly chooses 8 cards out of the same deck ( Any set of 8 cards is equally likely). Assume that the choice of 4 cards by Anita and the choice of 8 cards by Babita are independent. What is the probability that all 4 cards chosen by Anita are in the set of 8 cards chosen by Babita?
+A)48C4 x 52C4
+B)48C4 x 52C8
+C)48C8 x 52C8
+D) None of the above
+
+Ans) Anita = 52C4; Babita = 52C8
+Since the 4 cards that Anita chooses is among the 8 cards which Babita has chosen, thus the number of combinations possible is 52C4 (For selecting the 4 cards selected by Anita) * 48C4 (For selecting any other 4 cards by Babita, since the 4 cards selected by Anita are common)
+
+----------------------------------------------------------------------------------------------------------------------
+
+7) Probability of having 5 Sundays, in month of 31 days
+Ans) 28 days are fixed, remaining days are 3 out of 31, now those 3 days can be any of the day(among 7 days) so 3/7
+
+----------------------------------------------------------------------------------------------------------------------
+
+8) We have two dice, we are throwing two dice at same time, so what is the probability that we will be able to get sum as 6 from both the dice
+
+Possible outcomes:
+(1,5), (2,4), (3, 3), (4, 2), (5, 1)
+Total outcomes: 36
+Ans= 5/36
+
+----------------------------------------------------------------------------------------------------------------------
+
+9) A player is randomly dealt a sequence of 13 cards from a deck of 52-cards. All sequences of 13 cards are equally likely. In an equivalent model, the cards are chosen and dealt one at a time. When choosing a card, the dealer is equally likely to pick any of the cards that remain in the deck. 
+If you dealt 13 cards, what is the probability that the 13th card is a King?
+
+Since we are not told anything about the first 12 cards that are dealt, the probability that the 13th card dealt is a King, is the same as the probability that the first card dealt, or in fact any particular card dealt is a King, and this equals: 4/52
+4/52 = 1/13
+----------------------------------------------------------------------------------------------------------------------
+10) A fair six-sided die is rolled 6 times. What is the probability of getting all outcomes as unique?
+
+First time: 1 (any number can come)
+Second time: (We have only 5 options left) so 5/6
+Third time:(We have only 4 options left) so 4/6
+Fourth time: 3/6
+Fifth time: 2/6
+Sixth time: 1/6(only one possible)
+
+And all are independent events:
+1 * 5/6 * 4/6 *3/6 * 2/6 * 1/6 = 0.01543
+
+----------------------------------------------------------------------------------------------------------------------
+
+11) A group of 60 students is randomly split into 3 classes of equal size. All partitions are equally likely. Jack and Jill are two students belonging to that group. What is the probability that Jack and Jill will end up in the same class?
+
+All possible partitions are obtained with equal probability by a random assignment if these numbers, it doesn’t matter with which students we start, so we are free to start by assigning a random number to Jack and then we assign a random number to Jill. After Jack has been assigned a random number there are 59 random numbers available for Jill and 19 of these will put her in the same group as Jack. Therefore the probability is 19/59
+
+----------------------------------------------------------------------------------------------------------------------
+
+12) A and B toss a die, whoever gets 6 first wins. Given A starts first, what's the probability that A can win?
+
+Say A tosses first. The sequence is ABABAB…. Assume the prob that the first tosser wins is p. Naturally, the prob of B wins is 1-p.
+
+On the other hand, let’s separate A’s first toss and the following BABABA… Consider the second part, now B is the first tosser in the sequence and the prob of B wins is p. Overall, B wins when A’s first toss isn’t 6 and B wins the second part. prob(B wins) = 5/6 * p.
+
+So we have 1-p = 5/6 * p
+
+p = 6/11
+
+----------------------------------------------------------------------------------------------------------------------
+
+13) Probability of cutting a rope into three pieces such that the sides form a triangle
+
+We know property of triangle is that if we sum two sides of triangle then is greater than the third side
+
+There are only 4 possibilities of breaking the stick into 3 parts:
+
+1. Only first part is greater than half
+
+2. Only second part is greater than half
+
+3. Only third part is greater than half
+
+4. No part is greater than half
+
+For the formation of triangle, no part should be greater than half.
+
+This is satisfied by only the 4th event out of the all the 4 event possibilities
+
+Therefore, probability = 1/4
+
+----------------------------------------------------------------------------------------------------------------------
+
+Q) What is marginal probability?
+
+It is the probability of an event occurring (p(A)), it may be thought of as an unconditional probability.  It is not conditioned on another event.  Example:  the probability that a card drawn is red (p(red) = 0.5).  Another example:  the probability that a card drawn is a 4  (p(four)=1/13).
+
+----------------------------------------------------------------------------------------------------------------------
+
+Q) The probability that item an item at location A is 0.6 , and 0.8 at location B. What is the probability that item would be found on Amazon website.
+
+If we assume both are independent events then only we can find(because if dependent event the 0.6+0.8 > 1 so wrong)
+
+P(A or B) = P(A) + P(B) - P(A AND B) = 0.6 + 0.8 - (0.6*0.8) = 1.4 - 0.48 = 0.92
+
+----------------------------------------------------------------------------------------------------------------------
+
+Q) You’re playing Russian Roulette with a gangster. The revolver has 6 bullet chambers. The gangster puts two bullets in two consecutive chambers. He then spins the chamber, puts the gun to his head and fires. He survived. Next he asks you to either put the gun straight to your head or re-spin the gun before you do the same. What will you choose and why?
+
+If we randomise the gun we have a 2 in 6 or 1 in 3 chance of dying(as we can see below in 2 cases out of 6 there is bullet in first slot). The possible set ups at the start of the game are as follows:
+
+1 BB----
+2 -BB---
+3 --BB--
+4 ---BB-
+5 ----BB
+6 B----B
+
+ As player 1 didn't die we know it was not scenarios 1 and 6, eliminating those rows, and the first column as that chamber is no longer in the game - we're left with this: 
+
+2 BB---
+3 -BB--
+4 --BB-
+5 ---BB
+
+Giving us a 1 in 4 chance of dying(because out of above 4 options we can see in only 1 there is bullet in next(first) slot). By re spinning the gun it would have been 1 in 3.
+So here it would not be in your interests to re-spin the chamber. Hence we won't spin the chamber.
+
+----------------------------------------------------------------------------------------------------------------------
+
+Q) Suppose in above question if chamber has only 1 bullet
+
+If you have never thought about the analogous question with 1 bullet, One bullet can be in 6 positions as shown.
+
+1 B-----
+2 -B----
+3 --B---
+4 ---B--
+5 ----B-
+6 -----B
+
+With a randomised gun: Obviously you would, have a 1 in 6 chance of dying.
+
+However, if someone has just fired and survived then we have eliminated the first scenario, B-----, it definitely wasn't that.
+And we are on the second chamber:
+2 B----
+3 -B---
+4 --B--
+5 ---B-
+6 ----B
+Which is just the same as a standard game of Russian Roulette if there were only 5 chambers in the gun. A 1 in 5 chance of dying is worse than a 1 in 6.
+So in the case of one bullet it would be in your interest to spin and re-randomise the gun. 
+

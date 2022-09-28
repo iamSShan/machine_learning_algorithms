@@ -20,7 +20,7 @@ Formula:
 Pearson Correlation Coefficient(X, Y) = Cov(X,Y)/ (σx*σy) // Where σx is std dev of X and σy is std dev of Y
 Here the value always ranges b/w -1 to 1
 For e.g, if we have two independent features X and Y and a dependent variable Z, and if Pearson Correlation Coefficient is 1 then we can say both features are similar(as X increases then Y increases) then we can drop one of the feature and apply ML algorithm using one of the independent feature and the dependent feature.
-
+-1 means negative correlation, which means if one feature value increases, then second one decreases
 
 Spearman's rank correlation coefficient:
 =======================================

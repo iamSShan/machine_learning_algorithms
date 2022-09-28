@@ -1,0 +1,45 @@
+########################################################################################################################
+
+Q) Left skewed and right skewed distribution and relationship of mean, median and mode
+Ans) See notes
+
+########################################################################################################################
+
+Q) Calculate average size of all sharks it the sea. What are the different steps you are going to take?
+Ans) 
+First we take random sample of shark from different parts of sea and calculate the mean again we repeat the same procedure and we find average of calculated mean that will be average size of shark.
+Approach is based on Central Limit theorem.
+
+OR
+
+1. find size of 1000 sharks in the sea. 
+2. using bootstrapping create 1000 subsample sets of 300 sharks. Do Sampling with replacement. to create those 1000 subsets. 
+3. Compute mean of each of the 1000 subsets. 
+4. Arrange them in ascending order. 
+5. Take 25th mean value and 975th value. 
+6. the values obtained is our 95 percentile range for mean size of sharks.( Confidence level (usually around 95%))
+
+########################################################################################################################
+
+Q) Let's say you want find exit polls of election for a particular state i.e Random sampling. Can you tell about different sampling techniques.
+Probabilistic: Random, Stratified, Systematic, Clustering
+Non-Probabilistic: Convenience sampling, etc
+(Check stat notes 1 for detail description about each)
+
+########################################################################################################################
+
+Q) In linear regression, we apply gradient descent to find unknown values(m and c), so through statistical techniques how can we find values of these unknown parameter without applying gradient descent?
+
+Ans) We can use Ordinary Least Squares
+
+########################################################################################################################
+
+Q) What is a p-value
+
+Ans) A p value is used in hypothesis testing to help you support or reject the null hypothesis. The p value is the evidence against a null hypothesis. The smaller the p-value, the stronger the evidence that you should reject the null hypothesis.
+P values are expressed as decimals although it may be easier to understand what they are if you convert them to a percentage. For example, a p value of 0.0254 is 2.54%. This means there is a 2.54% chance your results could be random (i.e. happened by chance). That’s pretty tiny. On the other hand, a large p-value of .9(90%) means your results have a 90% probability of being completely random and not due to anything in your experiment. Therefore, the smaller the p-value, the more important (“significant“) your results. 
+
+########################################################################################################################
+
+
+########################################################################################################################
