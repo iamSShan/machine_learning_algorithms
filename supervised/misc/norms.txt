@@ -1,0 +1,53 @@
+* We have seen that we use L1 norm in Lasso and L2 norm in Ridge regression.
+
+* The notation ∣∣x∣∣ or ∣x∣∣2, typically refers to the "norm" of x. 
+
+* A norm is a function that assigns a strictly positive length or size to all vectors in a vector space, except for the zero vector, which is assigned a length of zero. It's a way of measuring the magnitude of vectors.
+
+* Here are a few common norms used in mathematics and data science:
+    
+1. Manhattan Norm (L1 Norm): This measures the sum of the absolute values of the components of the vector. It is used in various contexts like regularization in machine learning (Lasso regression, for instance). For a vector x, the Manhattan norm is:
+    ∣∣x∣∣₁ = ∣x1∣ + ∣x2∣ + … + ∣xn∣
+
+
+    This norm can be thought of as the distance a taxi would drive in a city laid out in square blocks (hence "Manhattan").
+
+
+2. Euclidean Norm (L2 Norm): This is perhaps the most familiar, often simply called the "magnitude" of a vector in Euclidean space. For a vector x=(x1,x2,…,xn)
+ x=(x1, x2 ,…,xn), the Euclidean norm is defined as:
+
+    ∣∣x∣∣₂= √(x1²+x2²+…+xn²)
+
+    This norm corresponds to the usual "straight-line" distance from the origin to the point in n-dimensional space.
+
+
+
+3. Infinity Norm (Max Norm): This is the maximum absolute value among the components of the vector. It’s useful in applications where the worst-case scenario is most critical. For a vector x, the infinity norm is:
+    ∣∣x∣∣∞ = max⁡(∣x1∣,∣x2∣,…,∣xn∣)
+
+
+4. p-Norm: This is a generalization of the Euclidean and Manhattan norms and is defined for any positive real number p. For a vector x and a real number p≥1, the p-norm is:
+    ∣∣x∣∣p = (∣x1∣p + ∣x2∣p + … + ∣xn∣p)^1/p
+
+
+These norms are fundamental in various fields, including machine learning, where they are used to measure distances or errors between predicted and actual values. Each norm has its own geometric interpretation and is chosen based on the requirements of the specific application.
+
+
+
+## Extra Note:
+* the traditional definition of the L2 norm involves a square root. However, in the context of Ridge regression, the term often referred to as the "L2 norm" of the coefficients actually means the squared L2 norm (without the square root). Let me clarify this:
+
+* In mathematical terms, the L2 norm of a vector ββ is defined as:
+    ∣∣w∣∣₂ = √ (∑(i=1 to p) wᵢ²)
+
+* Usage in Ridge Regression: in ridge regression, what's used is not the L2 norm directly but its square:
+
+    ∣∣w∣∣₂ = ∑(j=1 to p) wᵢ²
+
+    This term is often still referred to informally as the "L2 norm" in the regularization context, but more precisely, it is the square of the L2 norm.
+    
+## Reasons for Using Squared L2 Norm in Ridge
+
+* Simplicity of Derivation
+* Analytical Gradient: The use of squared terms ensures that the derivative is linear with respect to each coefficient, which simplifies both the computational and theoretical handling of the optimization problem.
+* Effective Regularization: Squaring the coefficients before summing them up makes the penalty for large coefficients more severe than for small ones, thus encouraging smaller coefficient values across the board, which can lead to models less prone to overfitting and better generalization on new data.

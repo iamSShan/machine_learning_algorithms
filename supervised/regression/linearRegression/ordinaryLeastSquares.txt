@@ -1,0 +1,40 @@
+* Ordinary least squares (OLS) regression is a specific type of linear regression. Linear regression is a broad term that encompasses various methods for modeling the relationship between one or more independent variables and a continuous dependent variable. OLS regression is one particular method within the family of linear regression techniques.
+* It sis alternative to gradeint descent, which linear regression uses for less dimension data, as dimension increase gradient descent is used.
+* Ordinary Least Squares (OLS) regression is a statistical method used for estimating the relationship between one or more independent variables (predictors) and a dependent variable (outcome). It's one of the simplest and most common forms of regression analysis.
+* Here in this method we want to find the line(or plane in higher dimensions) that minimizes the distances between actual and predicted, basically the sum of all distances
+* We are squarring as we can get negative values after taking difference
+* As we know eqn of line is: y = mx+b
+
+* We directly use formula to calculate values here. That's why OLS is simple as we directly use formula here to calculate values
+* We will use Ordinary Least Squares method to find the best line intercept (b) slope (m)
+* For, m = Σ(i to n) (xᵢ - x̄)(yᵢ - ȳ)/ Σ(i to n)(xᵢ - x̄)²
+* For, b = ȳ - mx̄
+
+x̄ = average value of independent variable
+ȳ = average value of dependent variable
+
+* While in gradient descent: The goal is similar like the above operation that we did to find out a best fit of intercept line ‘y’ in the slope ‘m’. Using Gradient descent algorithm also, we will figure out a minimal cost function by applying various parameters for theta 0 and theta 1 and see the slope intercept until it reaches convergence.
+
+
+
+Steps:
+1) Define the Model: Start with a linear regression model that represents the relationship between the independent variables (predictors) and the dependent variable (outcome). The general form of the model is:
+
+y = b0 + b1x1 + b2x2 + ...+ bnxn + ε
+
+Where:
+
+    y is the dependent variable.
+    x1,x2,...,xn are the independent variables.
+    b0,b1,b2,...,bn are the coefficients (slopes) to be estimated.
+    ε is the error term, representing the difference between the observed and predicted values.
+
+2) Estimate the Coefficients: Use the method of least squares to estimate the coefficients (b0,b1,b2,...,bn) that minimize the sum of squared differences between the observed values of the dependent variable and the values predicted by the regression equation. Mathematically, this involves finding the values of b0,b1,b2,...,bn that minimize the following objective function:
+
+∑i(1 to n) = (yi−(b0+b1xi1+b2xi2+...+bnxin))^2
+
+where yi is the observed value of the dependent variable for the ith observation.
+
+3) Assess Model Fit: Evaluate the goodness of fit of the model by examining measures such as the coefficient of determination (R2), which indicates the proportion of variance in the dependent variable that is explained by the independent variables.
+
+4) Make Predictions: Once the coefficients are estimated, the regression equation can be used to make predictions of the dependent variable for new observations based on the values of the independent variables.
