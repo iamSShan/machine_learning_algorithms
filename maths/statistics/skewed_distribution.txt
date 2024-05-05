@@ -3,6 +3,8 @@ Skewed Distribution
 
 - In probability theory and statistics, skewness is a measure of the asymmetry of the probability distribution of a real-valued random variable about its mean. The skewness value can be positive, zero, negative, or undefined.
 
+- In simple words, skewness indicates that data is not symmetrical, which means it is not normally distributed.
+
 - If we have some data and if we plot it on any histogram or any other similar graph and then if we see a elongated line i.e. if one tail is longer than another, the distribution is skewed. These distributions are sometimes called asymmetric or asymmetrical distributions as they don’t show any kind of symmetry.
 
 

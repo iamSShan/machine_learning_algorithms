@@ -24,4 +24,4 @@
 - (tasks after here…)
 
 
-**Outlier detection, one hot encoding, handling missing values are few basic examples of feature engineering.**
+**Outlier detection, one hot encoding, handling missing values, feature scaling are few basic examples of feature engineering.**

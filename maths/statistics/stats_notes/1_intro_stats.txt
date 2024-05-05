@@ -38,8 +38,8 @@ Basic terminologies used in Statistics:
 ======================================
  - Population(denoted by N): A collection or set of individuals or objects or events whose properties are to be analyzed.
  - Sample(denoted by n): A subset of population.
- - Population Mean: Mean of population. Denoted by μ. Formula: μ = ( Σ Xi ) / N. Here population vaiance: σ² =  Σ(i=1 to n) (xi-μ)/N
- - Sample mean: Mean of a sample. Denoted by x̄. Formula:  x̄ = ( Σ xi ) / n. For sample variance here: S² = Σ(i=1 to n) (xi-x̄) / n-1
+ - Population Mean: Mean of population. Denoted by μ. Formula: μ = ( Σ Xi ) / N. Here population vaiance: σ² =  Σ(i=1 to n) (xi-μ)^2/N
+ - Sample mean: Mean of a sample. Denoted by x̄. Formula:  x̄ = ( Σ xi ) / n. For sample variance here: S² = Σ(i=1 to n) (xi-x̄)^2 / n-1
  - Why we divide by n-1 in sample variance(because of unbiased estimation/Bessel's correction): https://www.youtube.com/watch?v=vGsRwB3TsiE&t=140s or https://www.youtube.com/watch?v=KkaU2ur3Ymw&t=305s
  
 Sampling:
@@ -55,8 +55,8 @@ Sampling:
   * This Sampling technique uses randomization to make sure that every element of the population gets an equal chance to be part of the selected sample. It’s alternatively known as random sampling.
   * Types of Probabilistic sampling techniques:
 
-  i) Simple random sampling: In this case each individual is chosen entirely by chance and each member of the population has an equal chance, or probability. It is used when we don’t have any kind of prior information about the target population. 	For e.g: In cricket when we used to do numbering, one person randomly chooses number of batting position of every player while another person pointing out the number by hand backside of 1st person. This is called Simple Random Sampling
-  
+  i) Simple random sampling: In this case each individual is chosen entirely by chance and each member of the population has an equal chance, or probability. It is used when we don’t have any kind of prior information about the target population. 	For e.g: You want to select a simple random sample of 1000 employees of a social media marketing company. You assign a number to every employee in the company database from 1 to 1000, and use a random number generator to select 100 numbers.
+
   ii) Systematic sampling:
    - Here the selection of elements is systematic and not random except the first element.
    - Individuals are selected at regular intervals from the sampling frame. The intervals are chosen to ensure an adequate sample size. If you need a sample size n from a population of size x, you should select every x/nth individual for the sample.
@@ -70,11 +70,17 @@ Sampling:
    	-- n2 = n1+k = 3+4 = 7; n3 = n2+k = 7+4 = 11
   - This type of sampling is known as Systematic Random Sampling.
 
-  iii) Stratified sampling:
-  When the population is split into non-overlapping groups(strata).
-  In this method, the population is first divided into subgroups (or strata) who all share a similar characteristic. It is used when we might reasonably expect the measurement of interest to vary between the different subgroups, and we want to ensure representation from all the subgroups. For example, in a study of stroke outcomes, we may stratify the population by sex, to ensure equal representation of men and women. The study sample is then obtained by taking equal sample sizes from each stratum. In stratified sampling, it may also be appropriate to choose non-equal sample sizes from each stratum. Here we need to have prior information about the population to create subgroups.
+  - For eg: All employees of the company are listed in alphabetical order. From the first 10 numbers, you randomly select a starting point: number 6. From number 6 onwards, every 10th person on the list is selected (6, 16, 26, 36, and so on), and you end up with a sample of 100 people.
 
-  In school prayer in the morning there is particular line for every class and different line for boys and girls, so here there are n groups of particular class student. And here if teacher chooses one boy from every class or one girl from every class, this is known as Stratified Random Sampling
+  iii) Stratified sampling:
+    - When the population is split into non-overlapping groups(strata).
+    - In this method, the population is first divided into subgroups (or strata) who all share a similar characteristic.
+    - To use this sampling method, we divide the population into subgroups (called strata) based on the relevant characteristic (e.g., gender identity, age range, income bracket, job role).
+    - The strata are then sampled individually
+    - It is used when we might reasonably expect the measurement of interest to vary between the different subgroups, and we want to ensure representation from all the subgroups.
+    - For example, in a study of stroke outcomes, we may stratify the population by sex, to ensure equal representation of men and women. The study sample is then obtained by taking equal sample sizes from each stratum. In stratified sampling, it may also be appropriate to choose non-equal sample sizes from each stratum. Here we need to have prior information about the population to create subgroups.
+
+    - For eg:The company has 800 female employees and 200 male employees. You want to ensure that the sample reflects the gender balance of the company, so you sort the population into two strata based on gender. Then you use random sampling on each group, selecting 80 women and 20 men, which gives you a representative sample of 100 people, this is known as Stratified Random Sampling
   
   Ques: Can we do stratified sampling based on designation?
   Ans: No. For eg: Designation is: Dot net developer, Python developer, Java developer. Then there is a probaility that groups may overlap i.e Python developer might know Java
@@ -82,6 +88,7 @@ Sampling:
 
 
   iv) Cluster sampling: In a clustered sample, subgroups of the population are used as the sampling unit, rather than individuals. The population is divided into subgroups, known as clusters, then the clusters are randomly selected to be included in the study. Clusters are identified using details such as age, sex, location etc. Assume in school suddenly one guest come and principal ordered every teacher to order all the students to come at playground. This is an immediate order so teacher and students can't make proper lines according to class wise. Here there can be or can't be students of different class are stood in one line. So here every line is called as Cluster. Now teacher order one student from every line, this is called Cluster Random Sampling.
+  - For eg: The company has offices in 10 cities across the country (all with roughly the same number of employees in similar roles). You don’t have the capacity to travel to every office to collect your data, so you use random sampling to select 3 offices – these are your clusters.
 
   v) Multi-Stage Sampling: It is the combination of one or more methods described above.
 
@@ -102,7 +109,7 @@ Sampling:
   ii) Referral/Snowball sampling
   iii) Convenience sampling: In this sampling, let's say we are doing a survey so only those people who are expert that particular domain(related to survey) will be part of sample.
   iv) Purposive sampling
-  v) Voluntary Sampling
+  v) Voluntary response sampling: A voluntary response sample is mainly based on ease of access. Instead of the researcher choosing participants and directly contacting them, people volunteer themselves (e.g. by responding to a public online survey).
  
  (Read: https://towardsdatascience.com/sampling-techniques-a4e34111d808)
  
@@ -146,6 +153,12 @@ The mode is the only measure you can use for nominal or categorical data that ca
 For e.g: x = [1,2,3,3,4,5]
 Mean here: 3 // Here 3 is measure of central tendency.
 
+Weighted mean and Trimmed Mean:
+==============================
+Weighted mean: It is sum of products of each value and its weight, divide by sum of the weights. It is used to calculate mean when the values in the dataset have different importance or frequency.
+For eg: We have 3 different model predictions, whose importance is: 0.2 0.3 and 0.5(which signify model 3 > model 2 > model 1) Now each model gives value 100000, now if we need find weighted average then we will can use: (0.2*100000 + 0.3*100000 + 0.5*100000) /(0.2+0.3+0.5)
+
+Trimmed mean: It is calculated by removing a certain percentage of the smallest and largest values from the dataset and then taking the mean of remaining values. The percentage of values removed is called the trimming percentage. We can decide a number let's say 10% which is our trimmimg percentage, where we will remove bottom and top 10% values, and we can find remaining data mean. It is used to reduce the impact of outliers.
 
 Frequency Distribution:
 ======================
@@ -158,3 +171,55 @@ B     |  3   |  8
 -------------------------------
 
 For discrete variable we can draw a bar chart and when variable is continuous we can draw histogram
+
+
+Measures of dispersion:
+======================
+Measures of dispersion are statistical tools used to describe the spread or variability within a data set. These measures provide insight into how much the data points differ from each other and from the central tendency of the data set (e.g., the mean). Understanding dispersion is crucial for interpreting the reliability and variability of data, and for comparing different data sets. Common measures of dispersion include the range, interquartile range (IQR), variance, standard deviation, and absolute deviation.
+
+1) Range
+
+The range is the simplest measure of dispersion, defined as the difference between the maximum and minimum values in a data set. It gives a basic indication of the spread of the data but is highly sensitive to outliers.
+
+Formula:
+Range = Maximum value − Minimum value
+
+2) Interquartile Range (IQR)
+
+The IQR measures the spread of the middle 50% of the data and is calculated as the difference between the 75th percentile (Q3) and the 25th percentile (Q1). It is less sensitive to outliers than the range.
+
+Formula:
+IQR = Q3 − Q1
+
+3) Variance
+
+The variance measures the average of the squared differeces between each data point and mean of the data set. It measures the average distance of each data point from mean and is useful in comparing the dispersion of datasets with different means. It is sensitive to outliers as we are squaring here, a big number coming and getting sqaured gets more bigger number.
+
+Formula for a sample:
+s^2 = (∑(I=1 to n)(xi−xˉ)^2) / n−1
+
+Formula for a population:
+σ^2 = (∑(I=1 to N)(xi−μ)^2) / N
+
+    xi represents each data point.
+    xˉ is the sample mean.
+    μ is the population mean.
+    n is the sample size.
+    N is the population size.
+
+4) Mean Absolute Deviation(MAD):
+- It uses same formula as variance , but here instead of squaring we do mod:= (∑|xi−xˉ|) / n
+- We use sqaring or mod to remove the effect of negative values
+- It is less sensitive to outliers as we not are not squaring here
+- We cannot use this for inferencing, if we know sample MAD then we can't find population MAD
+
+5) Standard Deviation:
+- It is square root of variance. It is useful in describing the shape of distribution. 
+- Why std deviation exist, when we have variance? Because unit of std dev is same as data.
+    - Let's understand with help of example: We are finding variance of 5 kids weights: 15, 17, 13, 11, 14; here we get our mean as 14. Now as we are squaring, when we calculate variance, we get unit as kg² not just kg, hence std deviation exist which calculates its sqrt and gives unit as kg
+
+6) Coefficient of Variation(CV):
+- The CV is the ratio of the std dev to the mean expressed as a percentage.
+- The coefficient of variation is a statistical measure that expresses the amount of variability in a dataset relative to mean. It is dimensionless quantity expressed as percentage.
+- Why we need coefficient of variation? Let's say we have 2 columns Salary and experience, if we calculate mean of both columns, we cannot compare mean of both as both are different. But we need to know, in which of the column, data is more near mean, then this comparison for both columns can be done by coefficient of variation.
+- Formula: (std dev/mean)*100%

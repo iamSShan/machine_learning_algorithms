@@ -1,4 +1,100 @@
 ----------------------------------------------------------------------------------------------------------------------
+Notes:
+For dependent event:
+The probability that two events will occur in the case of dependent event can be defined as: P(A∩B)=P(A) * P(B∣A)
+(which means that the probability of event A and event B to both occur is the same as the probability of event A to occur times the probability of event B to occur given the result of event A.)
+
+Mutual Exclusive Event:
+======================
+Every time we toss a coin we can get either H or T, so where only one thing is possible, among given options, this case is called as mutual exclusive event.
+
+Formula for Mutual Exclusive Event: P(A) + P(B)
+
+   Q) We want to find probability of getting heads or tails
+   A) This is the case of mutual exclusive event: then formula will be
+      P(H or T) = P(H) + P(T)
+                = 1/2 + 1/2
+                = 1
+   Q) Rolling a dice to get either 1, 2 or 3
+   A) This is also mutual exclusive event
+      P(1 or 2 or 3) = P(1) + P(2) + P(3)
+                     = 1/6  + 1/6  + 1/6
+                     = 0.5
+
+This property is called as additive rule.                     
+
+Not Mutual Exclusive Event:
+==========================
+Eg Taking a card from a deck of cards.
+I can take out a card which can be King and Hearts. I can have both combination of two. Hence it is not mutual exclusive event
+
+Formula for Not Mutual Exclusive Event: P(A∪B) = P(A) + P(B) - P(A∩B)
+
+
+   Q) Find probability of taking card out of deck is K or hearts shape
+   A) If want K or hearts (imagine a venn diagram with some intersection and we want to know parts of: Just K + Just Hearts - both's intersection)
+   Therefore: P(K) + P(Hearts) - P(K and Heart)
+            : P(K) + P(Hearts) - P(K ∩ Hearts)
+            : 4/52 + 13/52     - 1/52
+            : 16/52
+
+
+Additive rule:
+Mutual Exclusive: P(A or B) = P(A) + P(B)
+Non-Mutual Exclusive: P(A or B) = P(A) + P(B) - P(A∩B)
+
+
+For multiplicative rule:
+
+Independent event: Tossing a coin multiple times. Here probability of each outcome will be same.
+Dependent event: Taking a card from deck, I removed one card then second time event will be dependent as one card is already removed
+
+Eg) Rolling a dice find probability of getting and 1 and then getting 3
+This is eg of independent event:
+P(A and B) = P(A) * P(B)
+           = 1/6  * 1/6 = 1/36
+
+Eg) Probability of selecting King and then selecting a queen
+This is eg of dependent event:
+P(A and B) = P(A) * P(B|A) 
+(where P(B|A) is pronounced as prob of B given A; and is called as conditional probability)
+P(K and Q) = 1/52 * 1/51
+
+
+Multiplicative rule:
+Independent event: P(A and B) = P(A) * P(B)
+Dependent event: P(A and B) = P(A) * P(B|A)
+
+
+Probability of Sunday questions:
+================================
+
+
+Ques) Probability of having 5 Sundays, in month of 31 days
+Ans) 28 days are fixed, remaining days are 3 out of 31, now those 3 days can be any of the day(among 7 days) so 3/7
+
+----------------------------------------------------------------------------------------------------------------------
+Ques) Find the probability that 5 sundays occurs in the month of November of a randomly selected year.
+Ans) Here Nov has 30 days, so only 2 days are left, so 2/7
+Explaination:
+November has 30 days, which means 4 weeks and 2 days.
+Now, 4 weeks will contain 4 Sunday.
+The remaining 2 days may be :
+1. Sunday and Monday
+2. Monday and Tuesday
+3. Tuesday and Wednesday
+4. Wednesday and Thursday
+5. Thursday and Friday
+6. Friday and Saturday
+7. Saturday and Sunday
+Total number of possible outcomes = 7
+Now, favourable outcomes are : Sunday and Monday, Saturday and Sunday
+Number of favourable outcomes = 2
+Required probability (P)= Number of favourable outcomes /Total number of possible outcomes
+
+P = 2/7
+
+----------------------------------------------------------------------------------------------------------------------
 1) Let A and B be events on the same sample space, with P (A) = 0.6 and P (B) = 0.7. Can these two events be disjoint?
 
 Ans) “Disjoint” and “Mutually Exclusive” are equivalent terms. They cannot be disjoint because P(A) + P(B) > 1 here
@@ -55,8 +151,26 @@ Since the 4 cards that Anita chooses is among the 8 cards which Babita has chose
 
 ----------------------------------------------------------------------------------------------------------------------
 
-7) Probability of having 5 Sundays, in month of 31 days
-Ans) 28 days are fixed, remaining days are 3 out of 31, now those 3 days can be any of the day(among 7 days) so 3/7
+7) Probability of cutting a rope into three pieces such that the sides form a triangle
+
+We know property of triangle is that if we sum two sides of triangle then is greater than the third side
+
+There are only 4 possibilities of breaking the stick into 3 parts:
+
+1. Only first part is greater than half
+
+2. Only second part is greater than half
+
+3. Only third part is greater than half
+
+4. No part is greater than half
+
+For the formation of triangle, no part should be greater than half.
+
+This is satisfied by only the 4th event out of the all the 4 event possibilities
+
+Therefore, probability = 1/4
+
 
 ----------------------------------------------------------------------------------------------------------------------
 
@@ -105,27 +219,6 @@ So we have 1-p = 5/6 * p
 
 p = 6/11
 
-----------------------------------------------------------------------------------------------------------------------
-
-13) Probability of cutting a rope into three pieces such that the sides form a triangle
-
-We know property of triangle is that if we sum two sides of triangle then is greater than the third side
-
-There are only 4 possibilities of breaking the stick into 3 parts:
-
-1. Only first part is greater than half
-
-2. Only second part is greater than half
-
-3. Only third part is greater than half
-
-4. No part is greater than half
-
-For the formation of triangle, no part should be greater than half.
-
-This is satisfied by only the 4th event out of the all the 4 event possibilities
-
-Therefore, probability = 1/4
 
 ----------------------------------------------------------------------------------------------------------------------
 
@@ -189,3 +282,92 @@ And we are on the second chamber:
 Which is just the same as a standard game of Russian Roulette if there were only 5 chambers in the gun. A 1 in 5 chance of dying is worse than a 1 in 6.
 So in the case of one bullet it would be in your interest to spin and re-randomise the gun. 
 
+----------------------------------------------------------------------------------------------------------------------
+
+Q) What is the probability of drawing two cards (from the same deck of cards) that have the same suite?
+
+This is an example of a dependent event. The probability that two events will occur in the case of dependent event can be defined as:
+
+P(A\cap B)=P(A)*P(B|A)
+P(A∩B)=P(A) * P(B∣A)
+which means that the probability of event A and event B to both occur is the same as the probability of event A to occur times the probability of event B to occur given the result of event A.
+
+In our case, there are four suites in a deck of cards, and each suite has 13 cards.
+
+In the first draw, our probability to get a card with a specific suite would be 13/52. In the second draw, our probability of getting a card with the same suite as the first one wouldn’t be 13/52 anymore, but 12/51. Hence:
+
+P(two cards same suite)=4 * 13/52 * 12/51 = 4/17
+​
+
+## Shorter method for same:
+
+For the cards to be of same suit, the first draw does not matter(it can be of any suit), but the second draw has to match the suit of first.
+
+When the first draw is made there are total of 51 cards remaining in the pack and 12 cards are remaining of the same suit as the first draw.
+ 
+So, probability of second draw that matches the suit of first = 12/51 = 4/17 
+
+----------------------------------------------------------------------------------------------------------------------
+
+Q) Let’s say you have 2 dice. What is the probability of getting at least one 4?
+
+First way:
+One simple way is to create whole sample space like: {(1,1), (1,2), ........(6,6)} and then check how many pairs are there with at least one 4. Here 11
+And total possible ways are 36.
+Therefore 11/36.
+
+Second way:
+Different from previous questions, this question is one of the examples of independent events since the outcome from throwing a die wouldn’t have any effect on the outcome from throwing the second die.
+Let’s say that:
+
+A = getting a 4 in the first die
+B = getting a 4 in the second die
+The probability of independent events A and B both to occur can be defined as:
+P(A∩B) = P(A) * P(B)
+P(A∩B) = P(A) * P(B)
+
+And the probability of getting at least one 4 can be computed with the probability of union of two events:
+P(A∪B) = P(A) + P(B) − P(A∩B)
+P(A∪B) = P(A) + P(B) − P(A∩B)
+We know that the probability of us getting any specific outcome from throwing a die is ⅙. Thus,
+P(A∪B) = 1/6 + 1/6 − (1/6 * 1/6) = 11/36
+
+----------------------------------------------------------------------------------------------------------------------
+
+Q) Three ants are sitting at the three corners of an equilateral triangle. Each ant randomly picks a direction and starts to move along the edge of the triangle. What is the probability that none of the ants collide?
+
+Although it’s implicit, this is the case of an independent event. Each ant can randomly pick the direction, either to the left or to the right. The decision of one ant to go to the left wouldn’t affect the decision of the other two ants whether they want to go to the left or right.
+
+Since the decision is random, then the probability of an ant to pick a certain direction is 0.5. The three ants wouldn’t collide if all of them go to the left or all of them go to the right.
+
+Hence:
+P(none of the ants collide) = (1/2)^3 + (1/2)^3 = 1/4 // Either they all go left OR they all go right
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+Do questions from here:
+https://www.stratascratch.com/blog/30-probability-and-statistics-interview-questions-for-data-scientists/
+
+----------------------------------------------------------------------------------------------------------------------
+
+Q) A bucket has 500 coins, of which 499 are fair and 1 is double headed. Pick a coin at random, and toss it 5 times. Given that you see 5 heads, what is the probability of flipping 5 heads, when you picked a normal coin?
+
+ = P(5H | N) // 5 heads given normal coin
+ = P(H|N) * P(H|N) * P(H|N) * P(H|N) * P(H|N)
+ = (0.5)^5 // as coming head is 0.5 chance
+ = 1/32
+
+* Follow up ques: What is prob of flipping 5 heads ( P(5H) )?
+- It can be broken down into:
+	-- P(5H | N) * P(N)    +    P(5H|~N) * P(~N)
+	= (0.5)^5 * 499/500 (as 499 coins are normal)   +    1^5 (as it will give head only) * 1/500
+	// Law of total probability
+
+* Follow up ques: What is prob of you picked normal coin after flipping 5 heads?
+
+	 = P(N|5H) = P(5H|N) * P(N)  / P(5H)     # denominator can be picked from above
+	 // Bayes' Theorem
+
+----------------------------------------------------------------------------------------------------------------------

@@ -34,6 +34,7 @@ How to scale:
 	x' = (x-x̄)/σ  ; σ is standard deviation, x̄ is mean
 	When we apply this formula, automatically distribution will be converted in such a way that mean will be 0 and standard deviation will be 1
 	Sklearn StandardScaler library is used for this.
+    Standardization does not bound values between two specific numbers. Instead, it transforms the values such that they are centered around a mean of 0 
 
 2) Mean normalization: The distibution will scale down the values b/w -1 and 1 with μ = 0(i.e. mean = 0)
 					 : Standardisation and Mean normalization can be used for algorithms that assumes zero centric data like PCA(principal component analysis)

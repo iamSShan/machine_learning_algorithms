@@ -6,6 +6,9 @@ Stemming is the process of reducing infected words to their original word stem
 For e.g: history and historical will be reduced to `histori`
 	   : finally, final and finalized will be get reduced to `fina`
 	   : going, goes and gone to go
+
+
+Most common types of stemming: Porter Stemmer, Snowball Stemmer, Lancaster Stemmer
 Applications of Stemming: sentiment classfier, gmail message spam classifier
 Drawback: May produce word which does not have any meaning
 """

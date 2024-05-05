@@ -16,7 +16,7 @@
 
 * It basically tells you how much better your classifier is performing over the performance of a classifier that simply guesses at random according to the frequency of each class.
 
-* Cohen’s kappa is always less than or equal to 1. Values of 0 or less, indicate that the classifier is useless.
+* Cohen’s kappa is always between -1 to 1. Values of 0 or less, indicate that the classifier is useless.
 * There is no standardized way to interpret its values. Landis and Koch (1977) provide a way to characterize values. According to their scheme a value < 0 is indicating no agreement , 0–0.20 as slight, 0.21–0.40 as fair, 0.41–0.60 as moderate, 0.61–0.80 as substantial, and 0.81–1 as almost perfect agreement.
 
 * So, if K = 0.4, and expected accuracy is 50%, you can say that your classifier is performing 40% better than the random predictions, meaning a prediction accuracy of 70%.💡

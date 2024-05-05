@@ -41,5 +41,21 @@ P values are expressed as decimals although it may be easier to understand what 
 
 ########################################################################################################################
 
+Q) What is difference between histogram and bar graph?
+Ans) Histograms and bar graphs are both used to visualize data distributions, but they have distinct purposes and characteristics:
+Histogram:
+
+    * Histograms are used to represent the distribution of a continuous variable or numeric data.
+    * The x-axis represents the range of values of the variable being measured, divided into intervals or bins.
+    * The y-axis represents the frequency or count of observations falling within each interval.
+    * Histograms typically have contiguous bars with no gaps between them since they represent continuous data.
+    * Histograms are useful for identifying the central tendency, variability, and shape of the distribution of the data.
+
+Bar Graph:
+    * Bar graphs are used to compare different categories or groups of data.
+    * The x-axis represents the categories or groups being compared.
+    * The y-axis represents a measure of the data, such as frequency, count, percentage, or any other numerical value.
+    * Bar graphs have separate bars for each category or group, with gaps between them to indicate distinct categories.
+    * Bar graphs are useful for visualizing categorical data and comparing the magnitude of values across different categories.
 
 ########################################################################################################################
