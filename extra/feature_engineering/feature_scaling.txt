@@ -30,21 +30,41 @@ When to perform feature scaling:
 
 
 How to scale:
-1) Standardisation: It replaces the values by their Z-scores
-	x' = (x-x̄)/σ  ; σ is standard deviation, x̄ is mean
-	When we apply this formula, automatically distribution will be converted in such a way that mean will be 0 and standard deviation will be 1
-	Sklearn StandardScaler library is used for this.
-    Standardization does not bound values between two specific numbers. Instead, it transforms the values such that they are centered around a mean of 0 
+1) Standardisation(Z-score normalization): 
+  * It rescales the features so that they have the properties of a standard normal distribution with a mean of 0 and a standard deviation of 1.
+  * Formula used here:
+        x' = (x-μ)/σ  ; σ is standard deviation, μ is mean
 
-2) Mean normalization: The distibution will scale down the values b/w -1 and 1 with μ = 0(i.e. mean = 0)
-					 : Standardisation and Mean normalization can be used for algorithms that assumes zero centric data like PCA(principal component analysis)
-					 : x' = ( x-mean(x) ) / ( max(x)-min(x) )
+  * It is sensitive to outliers since it uses the mean and standard deviation.
+  * Suitable for algorithms that assume the data is normally distributed (e.g., linear regression, logistic regression).
+  * Often used in Principal Component Analysis (PCA) and algorithms that calculate distances (e.g., K-nearest neighbors, SVM).
+  * Sklearn StandardScaler library is used for this.
+  * Standardization does not bound values between two specific numbers. Instead, it transforms the values such that they are centered around a mean of 0 
 
-3) Min-max scaling: This scaling brings value b/w 0 and 1.
-				  : x' = ( x-min(x) ) / ( max(x)-min(x) )
+2) Normalization:
+  * Normalization (also called Min-Max scaling) rescales the features to a fixed range, usually [0, 1] or [-1, 1].
+  * Formula is : x' = ( x-min(x) ) / ( max(x)-min(x) )
+  * It is sensitive to outliers since the min and max values can be affected by extreme values.
+  * When the algorithm does not make assumptions about the distribution of the data we can use normalization.
+  * Suitable for algorithms that rely on distance or magnitude, such as K-nearest neighbors (KNN), neural networks, and clustering algorithms like K-means.
+  * When features have different units and need to be brought to the same scale.
+  * We use MinMaxScaler in sklearn
 
-4) Unit Vector: This will also scale down b/w [0, 1]
-x' = x /||x||
+
+Choosing Between Standardization and Normalization
+*  Both techniques are sensitive to outliers, but normalization is generally more affected since it depends on the min and max values which can be skewed by extreme values.
+* Standardization is often preferred when the features have different units and scales, and when the data is approximately normally distributed. It ensures that all features contribute equally to the model.
+* Normalization is typically used when the scale of the features matters, and you need to bound the values, especially in distance-based algorithms or neural networks where the input range can affect the learning process.
+
+3) Robust Normalization:
+  * Robust normalization scales the data using the median and the interquartile range (IQR), making it robust to outliers.
+  Formula: x′= (x − median(x)) / IQR
+  * To use: from sklearn.preprocessing import RobustScaler
+
+4) Mean Normalization:
+  * Mean normalization scales the data to have a mean of 0 and ranges between -1 and 1.
+  * Formula:   x′ = (x- mean(x)) / (max(x) - min(x))
+
 
 Note: Naive Bayes, Linear Discriminant Analysis, tree based models, XGBoost are not affected by feature scaling. In short any algo which is not distance based is not affected by feature scaling. We can do here also, but mostly it doesn't affects.
 Like in Decision Tree even if we apply feature scaling, number of branches will be almost same so it won't affect.

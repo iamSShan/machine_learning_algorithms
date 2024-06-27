@@ -1,5 +1,5 @@
 * Ordinary least squares (OLS) regression is a specific type of linear regression. Linear regression is a broad term that encompasses various methods for modeling the relationship between one or more independent variables and a continuous dependent variable. OLS regression is one particular method within the family of linear regression techniques.
-* It sis alternative to gradeint descent, which linear regression uses for less dimension data, as dimension increase gradient descent is used.
+* It is alternative to gradeint descent, which linear regression uses for less dimension data, as dimension increase gradient descent is used.
 * Ordinary Least Squares (OLS) regression is a statistical method used for estimating the relationship between one or more independent variables (predictors) and a dependent variable (outcome). It's one of the simplest and most common forms of regression analysis.
 * Here in this method we want to find the line(or plane in higher dimensions) that minimizes the distances between actual and predicted, basically the sum of all distances
 * We are squarring as we can get negative values after taking difference

@@ -59,3 +59,5 @@ Bar Graph:
     * Bar graphs are useful for visualizing categorical data and comparing the magnitude of values across different categories.
 
 ########################################################################################################################
+
+

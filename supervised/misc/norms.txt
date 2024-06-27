@@ -4,6 +4,8 @@
 
 * A norm is a function that assigns a strictly positive length or size to all vectors in a vector space, except for the zero vector, which is assigned a length of zero. It's a way of measuring the magnitude of vectors.
 
+* In simple terms, a norm is a way to measure the size or length of a mathematical object like a vector or a matrix. Think of it as a generalization of the idea of length.
+
 * Here are a few common norms used in mathematics and data science:
     
 1. Manhattan Norm (L1 Norm): This measures the sum of the absolute values of the components of the vector. It is used in various contexts like regularization in machine learning (Lasso regression, for instance). For a vector x, the Manhattan norm is:

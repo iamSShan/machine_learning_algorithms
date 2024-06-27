@@ -87,8 +87,13 @@ Sampling:
   But we can consider this stratified if profession are like doctor, engineer, etc.
 
 
-  iv) Cluster sampling: In a clustered sample, subgroups of the population are used as the sampling unit, rather than individuals. The population is divided into subgroups, known as clusters, then the clusters are randomly selected to be included in the study. Clusters are identified using details such as age, sex, location etc. Assume in school suddenly one guest come and principal ordered every teacher to order all the students to come at playground. This is an immediate order so teacher and students can't make proper lines according to class wise. Here there can be or can't be students of different class are stood in one line. So here every line is called as Cluster. Now teacher order one student from every line, this is called Cluster Random Sampling.
-  - For eg: The company has offices in 10 cities across the country (all with roughly the same number of employees in similar roles). You don’t have the capacity to travel to every office to collect your data, so you use random sampling to select 3 offices – these are your clusters.
+  iv) Cluster sampling: In a clustered sample, subgroups of the population are used as the sampling unit, rather than individuals. The population is divided into subgroups, known as clusters, then the clusters are randomly selected to be included in the study. Clusters are identified using details such as age, sex, location etc. 
+  Cluster sampling involves dividing the population into clusters, usually based on geographical or natural groupings, and then randomly selecting entire clusters for inclusion in the sample.
+  
+  - For eg: Imagine there is a researcher who wants to find out what students in a large state think about school lunches. The state is very big, and he don't have the time or resources to travel to every school. Here's what he does: He divides the entire state into school districts, which are groups of schools in nearby areas. These districts are your clusters. Instead of visiting every school, he randomly select a few entire school districts. Once he has selected these districts, he can go to each school in those districts and ask all the students about their opinions on school lunches.
+  This method is easier and cheaper because he only have to visit a few areas, but there's a risk that the districts you selected might not perfectly represent all the schools in the state. However, it's a practical approach for large-scale surveys.
+  - How it is different from stratified: Now, let's say we're still interested in students' opinions on school lunches, but this time, we want to make sure we get perspectives from students of different age groups: elementary, middle, and high school students. We start by dividing all the students in the state into these three groups based on their age. These groups are our strata. From each age group, we then randomly pick students to ask about their opinions. This way, we ensure that you get a good mix of answers from elementary, middle, and high school students.
+  
 
   v) Multi-Stage Sampling: It is the combination of one or more methods described above.
 
@@ -105,12 +110,17 @@ Sampling:
   * Outcome of sampling might be biased and makes difficult for all the elements of population to be part of the sample equally.
   * This type of sampling is also known as non-random sampling.
   * Types of Non probabilistic sampling techniques:
-  i) Quota sampling
-  ii) Referral/Snowball sampling
-  iii) Convenience sampling: In this sampling, let's say we are doing a survey so only those people who are expert that particular domain(related to survey) will be part of sample.
-  iv) Purposive sampling
+  i) Quota sampling: Quota sampling involves dividing the population into exclusive subgroups and then selecting a predetermined number of individuals from each subgroup. This method ensures that various subgroups are represented in the sample.
+  Eg: A market researcher might want to ensure that their sample includes a specific number of people from different age groups and genders to reflect the target market demographics.
+  
+  ii) Referral/Snowball sampling: Snowball sampling is used when the desired sample characteristic is rare. It involves identifying a few individuals who meet the criteria and then asking them to refer others who also meet the criteria.
+    Example: Researchers studying a rare disease might start with a few patients and ask them to refer other patients they know. This helps in reaching a larger sample of individuals with the disease.
+
+  iii) Convenience sampling: Convenience sampling involves selecting individuals who are easiest to reach or contact. A researcher standing outside a mall and surveying people who walk by is using convenience sampling. This method is simple but may not represent the entire population accurately.
+  iv) Judgmental or Purposive sampling: The researcher uses their expertise to select individuals that are most useful or representative for the study. The choice is based on specific criteria and the researcher’s judgment. Eg: An expert in environmental science might choose specific regions to study the effects of pollution based on known pollution levels and their expertise in the field.
+
   v) Voluntary response sampling: A voluntary response sample is mainly based on ease of access. Instead of the researcher choosing participants and directly contacting them, people volunteer themselves (e.g. by responding to a public online survey).
- 
+ vi) Expert Sampling: Expert sampling involves selecting individuals with specific expertise or knowledge relevant to the study. This method is often used when expert opinions are needed for research.
  (Read: https://towardsdatascience.com/sampling-techniques-a4e34111d808)
  
 
